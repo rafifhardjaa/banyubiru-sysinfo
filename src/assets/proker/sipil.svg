@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" role="img" aria-label="Teknik Sipil - Pengecoran Akses Jalan">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#115e59"/>
+      <stop offset="1" stop-color="#0f172a"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#g)"/>
+  <circle cx="680" cy="110" r="150" fill="#5eead4" opacity="0.18"/>
+  <path d="M0 430 L200 300 L360 470 L560 250 L800 430 L800 600 L0 600 Z" fill="#64748b" opacity="0.85"/>
+  <path d="M0 430 L200 300 L360 470 L560 250 L800 430 L800 600 L0 600 Z" fill="none" stroke="#e2e8f0" stroke-width="6" opacity="0.5"/>
+  <path d="M0 480 L200 350 L360 520 L560 300 L800 480" fill="none" stroke="#fbbf24" stroke-width="14" stroke-linecap="round" opacity="0.85"/>
+  <text x="400" y="470" text-anchor="middle" font-family="Inter, sans-serif" font-size="34" font-weight="800" fill="#ffffff">Teknik Sipil</text>
+</svg>

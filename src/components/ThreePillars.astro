@@ -1,0 +1,81 @@
+---
+const pillars = [
+  {
+    number: 'Pilar 01',
+    title: 'Memperkuat Fondasi',
+    description:
+      'Membangun kembali prasarana dasar desa — akses jalan, energi, dan penerangan — agar aktivitas ekonomi dan sosial warga berjalan tanpa hambatan.',
+    icon: 'foundation',
+  },
+  {
+    number: 'Pilar 02',
+    title: 'Menghidupkan Ruang',
+    description:
+      'Menata ruang dan menghidupkan potensi: perancangan tata ruang wisata, pengolahan pangan lokal, dan ruang-ruang kreatif baru bagi warga.',
+    icon: 'space',
+  },
+  {
+    number: 'Pilar 03',
+    title: 'Merajut Ekosistem',
+    description:
+      'Menghubungkan manusia, usaha, dan teknologi dalam satu ekosistem yang saling menguatkan melalui digitalisasi dan kolaborasi lintas prodi.',
+    icon: 'ecosystem',
+  },
+];
+---
+
+<section class="bg-white py-20 lg:py-28">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="mx-auto max-w-2xl text-center">
+      <span class="inline-flex items-center rounded-full border border-brand-100 bg-brand-50 px-3.5 py-1.5 text-xs font-bold uppercase tracking-widest text-brand-700">
+        Tiga Jejak Kolaborasi
+      </span>
+      <h2 class="mt-5 text-2xl font-bold tracking-tight text-slate-900 md:text-3xl lg:text-4xl">
+        Fondasi Kolaborasi Multidisiplin
+      </h2>
+      <p class="mt-4 text-base leading-relaxed text-slate-600 md:text-lg">
+        Enam program studi bergerak dalam tiga pilar yang saling melengkapi
+        demi dampak yang utuh bagi Banyubiru.
+      </p>
+    </div>
+
+    <ul class="mt-14 grid grid-cols-1 gap-6 md:grid-cols-3">
+      {pillars.map((pillar) => (
+        <li class="group rounded-[2rem] border border-slate-100 bg-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
+          <span class="flex h-14 w-14 items-center justify-center rounded-2xl bg-brand-50 text-brand-700 transition-colors group-hover:bg-brand-700 group-hover:text-white">
+            {pillar.icon === 'foundation' && (
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-7 w-7" aria-hidden="true">
+                <polyline points="3 21 21 21 3 3 3 21"></polyline>
+                <polyline points="3 21 21 21 3 3 3 21"></polyline>
+                <path d="M7 15h6"></path>
+                <path d="M10 12h6"></path>
+              </svg>
+            )}
+            {pillar.icon === 'space' && (
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-7 w-7" aria-hidden="true">
+                <path d="M2 22V8l10-6 10 6v14"></path>
+                <path d="M8 22v-8h8v8"></path>
+                <path d="M2 22h20"></path>
+              </svg>
+            )}
+            {pillar.icon === 'ecosystem' && (
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-7 w-7" aria-hidden="true">
+                <circle cx="12" cy="12" r="3"></circle>
+                <path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1"></path>
+              </svg>
+            )}
+          </span>
+          <p class="mt-6 text-xs font-bold uppercase tracking-widest text-brand-700">
+            {pillar.number}
+          </p>
+          <h3 class="mt-2 text-xl font-bold tracking-tight text-slate-900">
+            {pillar.title}
+          </h3>
+          <p class="mt-3 text-sm leading-relaxed text-slate-600">
+            {pillar.description}
+          </p>
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500" fill="none">
+  <rect width="800" height="500" fill="#f0fdfa"/>
+  <path d="M0 400 Q200 350 400 400 T800 400 V500 H0Z" fill="#0f766e" opacity="0.08"/>
+  <rect x="250" y="100" width="300" height="280" rx="24" fill="#0f766e" opacity="0.1"/>
+  <rect x="280" y="130" width="240" height="180" rx="16" fill="#14b8a6" opacity="0.12"/>
+  <rect x="300" y="155" width="200" height="10" rx="5" fill="#0f766e" opacity="0.2"/>
+  <rect x="300" y="180" width="160" height="8" rx="4" fill="#0f766e" opacity="0.15"/>
+  <rect x="300" y="200" width="180" height="8" rx="4" fill="#0f766e" opacity="0.15"/>
+  <rect x="300" y="260" width="60" height="30" rx="6" fill="#0f766e" opacity="0.2"/>
+  <rect x="375" y="260" width="60" height="30" rx="6" fill="#0f766e" opacity="0.15"/>
+  <rect x="450" y="260" width="50" height="30" rx="6" fill="#99f6e4" opacity="0.3"/>
+  <circle cx="400" cy="345" r="15" fill="#14b8a6" opacity="0.2"/>
+  <line x1="385" y1="355" x2="350" y2="380" stroke="#0f766e" stroke-width="1.5" opacity="0.15"/>
+  <line x1="415" y1="355" x2="450" y2="380" stroke="#0f766e" stroke-width="1.5" opacity="0.15"/>
+  <line x1="400" y1="360" x2="400" y2="380" stroke="#0f766e" stroke-width="1.5" opacity="0.15"/>
+</svg>

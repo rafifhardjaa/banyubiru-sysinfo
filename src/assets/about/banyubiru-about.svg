@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 900" width="800" height="900" role="img" aria-label="Komposisi visual Banyubiru: desa, perbukitan, dan Rawa Pening">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f0fdfa"/>
+      <stop offset="1" stop-color="#99f6e4"/>
+    </linearGradient>
+    <linearGradient id="hill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#14b8a6"/>
+      <stop offset="1" stop-color="#0f766e"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="900" fill="url(#sky)"/>
+  <circle cx="620" cy="150" r="70" fill="#fde68a" opacity="0.95"/>
+  <path d="M0 480 C160 380 300 430 430 390 C560 350 660 380 800 320 L800 0 L0 0 Z" fill="url(#hill)" opacity="0.85"/>
+  <path d="M0 580 C140 480 300 540 440 500 C580 460 680 510 800 460 L800 900 L0 900 Z" fill="#0f766e"/>
+  <path d="M0 640 C200 600 380 670 520 630 C660 590 730 640 800 620 L800 900 L0 900 Z" fill="#5eead4"/>
+  <path d="M120 640 C160 630 190 635 210 640" stroke="#ffffff" stroke-width="6" stroke-linecap="round" fill="none" opacity="0.6"/>
+  <path d="M520 660 C560 646 600 658 640 646" stroke="#ffffff" stroke-width="6" stroke-linecap="round" fill="none" opacity="0.55"/>
+  <g transform="translate(330,430)">
+    <path d="M-26 40 L-26 -50 L26 -50 L26 40 Z" fill="#fbbf24" opacity="0.95"/>
+    <path d="M-40 -50 L0 -95 L40 -50 Z" fill="#134e4a"/>
+    <rect x="-40" y="-50" width="80" height="12" fill="#134e4a"/>
+  </g>
+  <g transform="translate(420,410)">
+    <path d="M-20 32 L-20 -40 L20 -40 L20 32 Z" fill="#fbbf24" opacity="0.9"/>
+    <path d="M-30 -40 L0 -76 L30 -40 Z" fill="#134e4a"/>
+    <rect x="-30" y="-40" width="60" height="10" fill="#134e4a"/>
+  </g>
+  <g fill="#0d9488">
+    <path d="M120 200 c8 -20 24 -20 32 0 l-4 22 h-24 z"/>
+    <path d="M220 160 c8 -20 24 -20 32 0 l-4 22 h-24 z"/>
+    <path d="M60 240 c8 -20 24 -20 32 0 l-4 22 h-24 z"/>
+  </g>
+  <path d="M200 700 C200 660 260 660 260 700" stroke="#0f766e" stroke-width="5" fill="none" opacity="0.6"/>
+  <g fill="#ffffff" opacity="0.8">
+    <circle cx="90" cy="380" r="6"/>
+    <circle cx="130" cy="340" r="5"/>
+    <circle cx="720" cy="260" r="6"/>
+    <circle cx="760" cy="300" r="5"/>
+  </g>
+  <text x="400" y="790" text-anchor="middle" font-family="Inter, sans-serif" font-size="38" font-weight="800" fill="#ffffff" opacity="0.95">Satu Desa, Banyak Karya</text>
+  <text x="400" y="835" text-anchor="middle" font-family="Inter, sans-serif" font-size="20" font-weight="600" fill="#134e4a" opacity="0.75">FTI • BEM & 6 Himpunan Prodi</text>
+</svg>

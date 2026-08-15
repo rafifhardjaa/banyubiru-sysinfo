@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" role="img" aria-label="Jamu Herbal Asli Banyubiru">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4ade80"/><stop offset="1" stop-color="#166534"/></linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="#f0fdf4"/>
+  <circle cx="120" cy="110" r="150" fill="#22c55e" opacity="0.2"/>
+  <g transform="translate(400,270)">
+    <path d="M-40 -70 L-15 -130 L15 -130 L40 -70 L30 60 L-30 60 Z" fill="#fef9c3"/>
+    <path d="M-40 -70 L-15 -130 L15 -130 L40 -70" fill="none" stroke="#a16207" stroke-width="6"/>
+    <path d="M-30 60 L30 60" stroke="#a16207" stroke-width="6"/>
+    <path d="M-15 -130 L-20 -180 M15 -130 L20 -180" stroke="#166534" stroke-width="8" stroke-linecap="round"/>
+    <g fill="#16a34a">
+      <path d="M-20 -180 C-30 -210 -55 -210 -60 -178 C-56 -150 -28 -148 -20 -180 Z"/>
+      <path d="M20 -180 C30 -210 55 -210 60 -178 C56 -150 28 -148 20 -180 Z"/>
+    </g>
+    <path d="M-15 20 L15 20" stroke="#a16207" stroke-width="4" opacity="0.7"/>
+  </g>
+  <text x="400" y="500" text-anchor="middle" font-family="Inter, sans-serif" font-size="30" font-weight="800" fill="#14532d">Jamu Herbal Asli Banyubiru</text>
+</svg>

@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" width="800" height="1000" role="img" aria-label="Lanskap Banyubiru">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f0fdfa"/>
+      <stop offset="1" stop-color="#ccfbf1"/>
+    </linearGradient>
+    <linearGradient id="hillBack" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#5eead4"/>
+      <stop offset="1" stop-color="#0d9488"/>
+    </linearGradient>
+    <linearGradient id="hillFront" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0d9488"/>
+      <stop offset="1" stop-color="#134e4a"/>
+    </linearGradient>
+    <linearGradient id="water" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#99f6e4"/>
+      <stop offset="1" stop-color="#5eead4"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="1000" fill="url(#bg)"/>
+  <circle cx="640" cy="170" r="86" fill="#fbbf24" opacity="0.9"/>
+  <circle cx="640" cy="170" r="118" fill="#fbbf24" opacity="0.25"/>
+  <path d="M0 520 C160 420 300 470 430 430 C560 390 660 420 800 360 L800 0 L0 0 Z" fill="url(#hillBack)" opacity="0.85"/>
+  <path d="M0 640 C140 540 300 600 440 555 C580 510 680 560 800 500 L800 1000 L0 1000 Z" fill="url(#hillFront)"/>
+  <path d="M0 700 C200 660 380 730 520 690 C660 650 730 700 800 680 L800 1000 L0 1000 Z" fill="url(#water)"/>
+  <path d="M120 700 C160 690 190 695 210 700" stroke="#ffffff" stroke-width="6" stroke-linecap="round" fill="none" opacity="0.5"/>
+  <path d="M520 720 C560 706 600 718 640 706" stroke="#ffffff" stroke-width="6" stroke-linecap="round" fill="none" opacity="0.45"/>
+  <g fill="#134e4a" opacity="0.6">
+    <path d="M430 150 c8 -20 24 -20 32 0 l-4 22 h-24 z"/>
+    <path d="M330 190 c8 -20 24 -20 32 0 l-4 22 h-24 z"/>
+    <path d="M520 130 c8 -20 24 -20 32 0 l-4 22 h-24 z"/>
+  </g>
+  <path d="M150 800 C150 760 200 760 200 800" stroke="#0f766e" stroke-width="4" fill="none" opacity="0.6"/>
+  <path d="M210 812 C210 772 260 772 260 812" stroke="#0f766e" stroke-width="4" fill="none" opacity="0.5"/>
+  <g fill="#ffffff" opacity="0.7">
+    <circle cx="90" cy="420" r="5"/>
+    <circle cx="120" cy="390" r="4"/>
+    <circle cx="720" cy="300" r="5"/>
+    <circle cx="750" cy="340" r="4"/>
+  </g>
+  <text x="400" y="880" text-anchor="middle" font-family="Inter, sans-serif" font-size="40" font-weight="800" fill="#ffffff" opacity="0.9">Banyubiru</text>
+  <text x="400" y="930" text-anchor="middle" font-family="Inter, sans-serif" font-size="22" font-weight="600" fill="#134e4a" opacity="0.75">Rawa Pening • Kab. Semarang</text>
+</svg>

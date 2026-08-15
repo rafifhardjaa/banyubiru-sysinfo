@@ -1,0 +1,11 @@
+{
+  "name": "Kopi Lereng Kelir",
+  "owner": "Bapak Joko Santoso",
+  "category": "Minuman Tradisional",
+  "hamlet": "Dusun Batur, Banyubiru",
+  "description": "Kopi robusta lereng Gunung Kelir, dipanggang perlahan dengan aroma pekat dan cita rasa khas tanah Semarang.",
+  "price": "Rp 40.000 / 250g biji",
+  "image": "/images/umkm/kopi.svg",
+  "waLink": "https://wa.me/6281234567891",
+  "order": 2
+}

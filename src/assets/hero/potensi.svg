@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="500" height="500" role="img" aria-label="Potensi Olahan Lokal">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ccfbf1"/>
+      <stop offset="1" stop-color="#0d9488"/>
+    </linearGradient>
+  </defs>
+  <rect width="500" height="500" fill="#f0fdfa"/>
+  <circle cx="250" cy="250" r="190" fill="url(#g)"/>
+  <circle cx="250" cy="250" r="190" fill="none" stroke="#0f766e" stroke-width="3" opacity="0.4"/>
+  <g fill="#ffffff" opacity="0.85">
+    <circle cx="250" cy="180" r="34"/>
+    <circle cx="195" cy="235" r="34"/>
+    <circle cx="305" cy="235" r="34"/>
+    <circle cx="250" cy="305" r="34"/>
+    <circle cx="195" cy="315" r="20"/>
+    <circle cx="305" cy="315" r="20"/>
+  </g>
+  <circle cx="250" cy="250" r="10" fill="#134e4a"/>
+  <path d="M120 420 C180 380 320 380 380 420" stroke="#ffffff" stroke-width="6" stroke-linecap="round" fill="none" opacity="0.7"/>
+</svg>

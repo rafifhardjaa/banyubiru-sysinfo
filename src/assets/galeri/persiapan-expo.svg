@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 900" width="800" height="900" role="img" aria-label="Persiapan panggung puncak Expo Gelar Karya">
+  <defs><linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#134e4a"/><stop offset="1" stop-color="#0f172a"/></linearGradient></defs>
+  <rect width="800" height="900" fill="url(#g)"/>
+  <circle cx="130" cy="150" r="160" fill="#fbbf24" opacity="0.12"/>
+  <circle cx="680" cy="700" r="180" fill="#14b8a6" opacity="0.12"/>
+  <g transform="translate(400,430)">
+    <rect x="-300" y="40" width="600" height="18" rx="9" fill="#475569"/>
+    <rect x="-260" y="-80" width="520" height="120" rx="18" fill="#f0fdfa"/>
+    <path d="M-260 -40 L-120 -140 L120 -140 L260 -40" fill="#14b8a6"/>
+    <circle cx="-200" cy="-40" r="16" fill="#fbbf24"/>
+    <circle cx="-120" cy="-40" r="16" fill="#fbbf24"/>
+    <circle cx="-40" cy="-40" r="16" fill="#fbbf24"/>
+    <circle cx="40" cy="-40" r="16" fill="#fbbf24"/>
+    <circle cx="120" cy="-40" r="16" fill="#fbbf24"/>
+    <circle cx="200" cy="-40" r="16" fill="#fbbf24"/>
+    <rect x="-60" y="-60" width="120" height="20" rx="10" fill="#134e4a" opacity="0.85"/>
+  </g>
+  <text x="400" y="240" text-anchor="middle" font-family="Inter, sans-serif" font-size="36" font-weight="800" fill="#ffffff">Panggung Expo Gelar Karya</text>
+</svg>

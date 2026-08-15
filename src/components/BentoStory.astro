@@ -1,0 +1,125 @@
+---
+import { Image } from 'astro:assets';
+import rawaPening from '../assets/bento/rawa-pening.svg';
+---
+
+<section class="bg-slate-50 py-20 lg:py-28">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="mx-auto max-w-2xl text-center">
+      <span class="inline-flex items-center rounded-full border border-brand-100 bg-brand-50 px-3.5 py-1.5 text-xs font-bold uppercase tracking-widest text-brand-700">
+        Cerita Banyubiru
+      </span>
+      <h2 class="mt-5 text-2xl font-bold tracking-tight text-slate-900 md:text-3xl lg:text-4xl">
+        Sebuah Wilayah, Enam Cerita Perubahan
+      </h2>
+      <p class="mt-4 text-base leading-relaxed text-slate-600 md:text-lg">
+        Kawasan di selatan Kabupaten Semarang ini menyimpan potensi alam,
+        warisan budaya, dan semangat warga yang menjadi pangkal seluruh gerak
+        pengabdian FTI.
+      </p>
+    </div>
+
+    <div class="mt-14 grid grid-cols-1 gap-6 md:grid-cols-3">
+      <article class="relative overflow-hidden rounded-[2rem] md:col-span-2 md:min-h-[360px] reveal-on-scroll">
+        <Image
+          src={rawaPening}
+          alt="Pemandangan Rawa Pening yang tenang di kaki perbukitan"
+          width={1000}
+          height={700}
+          class="absolute inset-0 h-full w-full object-cover"
+          loading="lazy"
+        />
+        <div class="absolute inset-0 bg-gradient-to-t from-brand-900/90 via-brand-900/30 to-transparent"></div>
+        <div class="absolute inset-x-0 bottom-0 p-8 lg:p-10">
+          <span class="inline-flex items-center rounded-full bg-white/15 px-3.5 py-1.5 text-xs font-bold uppercase tracking-widest text-white backdrop-blur-md ring-1 ring-white/25">
+            Kawasan Rawa Pening
+          </span>
+          <h3 class="mt-4 text-xl font-bold tracking-tight text-white md:text-2xl">
+            Danau Alami di Kaki Bukit, Sumber Kehidupan Desa
+          </h3>
+          <p class="mt-2 max-w-lg text-sm leading-relaxed text-slate-100 md:text-base">
+            Rawa Pening menjadi latar semesta pengabdian kami — dari tepiannya
+            lahir energi, pangan, dan karya yang menyejahterakan warga.
+          </p>
+        </div>
+      </article>
+
+      <article class="rounded-[2rem] border border-slate-100 bg-white p-8 shadow-sm md:min-h-[360px] reveal-on-scroll">
+        <span class="text-xs font-bold uppercase tracking-widest text-brand-700">
+          Geodata Kawasan
+        </span>
+        <div class="mt-6 space-y-6">
+          <div class="rounded-2xl bg-slate-50 p-6">
+            <p class="text-4xl font-extrabold tracking-tight text-slate-900">
+              22<small class="text-lg font-bold text-brand-700"> KM</small>
+            </p>
+            <p class="mt-1 text-sm font-semibold text-slate-600">
+              Luas kawasan Kecamatan Banyubiru
+            </p>
+          </div>
+          <div class="rounded-2xl bg-slate-50 p-6">
+            <p class="text-4xl font-extrabold tracking-tight text-slate-900">
+              4<small class="text-lg font-bold text-brand-700"> KM</small>
+            </p>
+            <p class="mt-1 text-sm font-semibold text-slate-600">
+              Radius area pengabdian terdalam
+            </p>
+          </div>
+        </div>
+      </article>
+
+      <article class="rounded-[2rem] bg-brand-700 p-8 text-white shadow-sm md:min-h-[360px] reveal-on-scroll">
+        <span class="text-xs font-bold uppercase tracking-widest text-brand-100">
+          Potensi Lokal
+        </span>
+        <h3 class="mt-4 text-xl font-bold tracking-tight">UMKM Berdaya Saing</h3>
+        <ul class="mt-6 space-y-4">
+          <li class="flex items-center gap-3">
+            <span class="flex h-8 w-8 items-center justify-center rounded-full bg-white/15 text-sm">🍚</span>
+            <span class="text-sm font-semibold">Olahan pangan khas desa</span>
+          </li>
+          <li class="flex items-center gap-3">
+            <span class="flex h-8 w-8 items-center justify-center rounded-full bg-white/15 text-sm">🌾</span>
+            <span class="text-sm font-semibold">Komoditas agraris unggulan</span>
+          </li>
+          <li class="flex items-center gap-3">
+            <span class="flex h-8 w-8 items-center justify-center rounded-full bg-white/15 text-sm">⛵</span>
+            <span class="text-sm font-semibold">Agrowisata & wisata danau</span>
+          </li>
+        </ul>
+        <p class="mt-6 text-sm leading-relaxed text-brand-50">
+          Enam prodi turun tangan mengangkat nilai tambahnya menjadi peluang
+          ekonomi nyata.
+        </p>
+      </article>
+
+      <article class="flex flex-col justify-between rounded-[2rem] border border-slate-100 bg-white p-8 shadow-sm md:col-span-2 md:min-h-[300px] reveal-on-scroll lg:p-12">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-widest text-brand-700">
+            Panggilan Mengabdi
+          </span>
+          <blockquote class="mt-4 text-xl font-bold leading-snug tracking-tight text-slate-900 md:text-2xl lg:text-3xl">
+            "Ilmu tidaklah bermakna jika tak pernah menapaki tanah desa. Di
+            Banyubiru kami belajar sambil membangun, mengabdi sambil
+            mencipta."
+          </blockquote>
+        </div>
+        <div class="mt-8 flex items-center justify-between">
+          <p class="text-sm font-semibold text-slate-500">
+            — Divisi Pengabdian Masyarakat FTI
+          </p>
+          <a
+            href="/tentang"
+            class="inline-flex items-center gap-2 rounded-full border border-slate-200 px-5 py-2.5 text-sm font-bold text-brand-700 transition-all hover:-translate-y-0.5 hover:border-brand-100 hover:bg-brand-50 hover:shadow-md"
+          >
+            Kenali Lebih Dekat
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4" aria-hidden="true">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>

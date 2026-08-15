@@ -1,0 +1,183 @@
+---
+const targetTimestamp = new Date('2026-10-25T09:00:00+07:00').getTime();
+---
+
+<div id="expo-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-slate-900/80 p-4 backdrop-blur-md">
+  <div class="relative w-full max-w-2xl overflow-hidden rounded-[2rem] border border-white/20 bg-white/95 shadow-2xl backdrop-blur-xl">
+    <div class="pointer-events-none absolute -left-20 -top-20 h-48 w-48 rounded-full bg-brand-500/20 blur-3xl"></div>
+    <div class="pointer-events-none absolute -bottom-20 -right-20 h-48 w-48 rounded-full bg-brand-700/20 blur-3xl"></div>
+
+    <div class="relative p-6 sm:p-8 lg:p-10">
+      <div class="flex items-start justify-between">
+        <div>
+          <span class="inline-flex items-center rounded-full border border-brand-100 bg-brand-50 px-3.5 py-1.5 text-xs font-bold uppercase tracking-widest text-brand-700">
+            Puncak Pengabdian
+          </span>
+          <h2 class="mt-4 text-2xl font-extrabold tracking-tight text-slate-900 md:text-3xl">
+            Expo Gelar Karya FTI Banyubiru
+          </h2>
+        </div>
+        <button id="btn-close-expo" type="button" class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-slate-100 text-slate-500 transition-colors hover:bg-red-50 hover:text-red-600" aria-label="Tutup modal">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+      <div class="mt-8" data-countdown={targetTimestamp}>
+        <div class="grid grid-cols-4 gap-3" data-countdown-boxes>
+          <div class="rounded-2xl border border-slate-200 bg-brand-700 p-3 text-center shadow-sm md:p-4">
+            <p data-countdown-unit="hari" class="text-2xl font-black tabular-nums text-white md:text-4xl">00</p>
+            <p class="mt-1 text-xs font-bold uppercase tracking-widest text-teal-200">Hari</p>
+          </div>
+          <div class="rounded-2xl border border-slate-200 bg-brand-700 p-3 text-center shadow-sm md:p-4">
+            <p data-countdown-unit="jam" class="text-2xl font-black tabular-nums text-white md:text-4xl">00</p>
+            <p class="mt-1 text-xs font-bold uppercase tracking-widest text-teal-200">Jam</p>
+          </div>
+          <div class="rounded-2xl border border-slate-200 bg-brand-700 p-3 text-center shadow-sm md:p-4">
+            <p data-countdown-unit="menit" class="text-2xl font-black tabular-nums text-white md:text-4xl">00</p>
+            <p class="mt-1 text-xs font-bold uppercase tracking-widest text-teal-200">Menit</p>
+          </div>
+          <div class="rounded-2xl border border-slate-200 bg-brand-700 p-3 text-center shadow-sm md:p-4">
+            <p data-countdown-unit="detik" class="text-2xl font-black tabular-nums text-white md:text-4xl">00</p>
+            <p class="mt-1 text-xs font-bold uppercase tracking-widest text-teal-200">Detik</p>
+          </div>
+        </div>
+        <p
+          class="hidden rounded-2xl border border-slate-200 bg-brand-700 p-4 text-center text-lg font-extrabold text-white shadow-sm md:text-xl"
+          data-countdown-finished
+        >
+          🎉 Pameran Expo Sedang Berlangsung!
+        </p>
+      </div>
+
+      <div class="mt-8 grid gap-4 sm:grid-cols-2">
+        <div class="flex items-start gap-4 rounded-2xl border border-slate-100 bg-slate-50 p-5">
+          <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-brand-100 text-lg">📍</span>
+          <div>
+            <p class="text-sm font-bold text-slate-900">Lokasi</p>
+            <p class="mt-1 text-sm leading-relaxed text-slate-600">Lapangan Utama / Balai Desa Banyubiru, Kecamatan Banyubiru, Kabupaten Semarang</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4 rounded-2xl border border-slate-100 bg-slate-50 p-5">
+          <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-brand-100 text-lg">⏰</span>
+          <div>
+            <p class="text-sm font-bold text-slate-900">Waktu</p>
+            <p class="mt-1 text-sm leading-relaxed text-slate-600">Selasa, 25 Oktober 2026 — Pukul 09.00 WIB sampai selesai</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-4 flex items-start gap-4 rounded-2xl border border-slate-100 bg-slate-50 p-5">
+        <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-brand-100 text-lg">🎪</span>
+        <div>
+          <p class="text-sm font-bold text-slate-900">Agenda & Rangkaian Acara</p>
+          <ul class="mt-2 space-y-1.5 text-sm leading-relaxed text-slate-600">
+            <li class="flex items-center gap-2">
+              <span class="inline-block h-1.5 w-1.5 rounded-full bg-brand-500"></span>
+              Demo Teknologi & Inovasi 6 Program Studi FTI
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="inline-block h-1.5 w-1.5 rounded-full bg-brand-500"></span>
+              Pameran Produk Unggulan UMKM Binaan Warga
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="inline-block h-1.5 w-1.5 rounded-full bg-brand-500"></span>
+              Talkshow Inspiratif & Pentas Seni Budaya
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="inline-block h-1.5 w-1.5 rounded-full bg-brand-500"></span>
+              Penandatanganan Komitmen Keberlanjutan Program
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mt-8 text-center">
+        <button id="btn-close-expo-bottom" type="button" class="inline-flex items-center gap-2 rounded-full bg-brand-700 px-8 py-3.5 text-sm font-bold text-white shadow-sm transition-all hover:-translate-y-0.5 hover:bg-brand-800 hover:shadow-lg">
+          Tutup
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  function initExpoModal() {
+    const modal = document.getElementById('expo-modal');
+    const btnOpen = document.getElementById('btn-open-expo');
+    const btnClose = document.getElementById('btn-close-expo');
+    const btnCloseBottom = document.getElementById('btn-close-expo-bottom');
+
+    if (!modal || !btnOpen) return;
+
+    function open() {
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+      startCountdown();
+    }
+
+    function close() {
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+      document.body.style.overflow = '';
+    }
+
+    btnOpen.addEventListener('click', open);
+
+    if (btnClose) btnClose.addEventListener('click', close);
+    if (btnCloseBottom) btnCloseBottom.addEventListener('click', close);
+
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) close();
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !modal.classList.contains('hidden')) close();
+    });
+
+    let countdownTimer = null;
+
+    function startCountdown() {
+      if (countdownTimer) return;
+      const root = modal.querySelector('[data-countdown]');
+      if (!root) return;
+      const target = Number(root.dataset.countdown || 0);
+      const boxes = root.querySelector('[data-countdown-boxes]');
+      const finished = root.querySelector('[data-countdown-finished]');
+      const units = root.querySelectorAll('[data-countdown-unit]');
+
+      const pad = (n) => String(Math.max(0, n)).padStart(2, '0');
+
+      function tick() {
+        const diff = Math.max(0, target - Date.now());
+
+        if (diff === 0) {
+          if (boxes) boxes.classList.add('hidden');
+          if (finished) finished.classList.remove('hidden');
+          if (countdownTimer) { clearInterval(countdownTimer); countdownTimer = null; }
+          return;
+        }
+
+        const values = [
+          Math.floor(diff / 86_400_000),
+          Math.floor((diff % 86_400_000) / 3_600_000),
+          Math.floor((diff % 3_600_000) / 60_000),
+          Math.floor((diff % 60_000) / 1_000),
+        ];
+
+        units.forEach((unit, index) => {
+          unit.textContent = pad(values[index]);
+        });
+      }
+
+      tick();
+      countdownTimer = setInterval(tick, 1000);
+    }
+  }
+
+  document.addEventListener('astro:page-load', initExpoModal);
+  if (document.readyState !== 'loading') initExpoModal();
+</script>
