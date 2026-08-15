@@ -46,6 +46,9 @@ function formatDate(date: Date): string {
                   width={960}
                   height={540}
                   class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  loading="eager"
+                  fetchpriority="high"
+                  decoding="async"
                 />
                 <span class="absolute left-4 top-4 inline-flex items-center rounded-full bg-brand-700 px-3.5 py-1.5 text-xs font-bold uppercase tracking-widest text-white shadow-lg">
                   Berita Utama
@@ -85,14 +88,15 @@ function formatDate(date: Date): string {
           {reguler.map((item) => (
             <a href={`/berita/${item.id}`} class="group flex flex-col overflow-hidden rounded-[2rem] border border-slate-100 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md reveal-on-scroll">
               <div class="relative aspect-[16/10] overflow-hidden">
-                <Image
-                  src={resolveBeritaImage(item.id)}
-                  alt={item.data.title}
-                  width={640}
-                  height={400}
-                  class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  loading="lazy"
-                />
+<Image
+                    src={resolveBeritaImage(item.id)}
+                    alt={item.data.title}
+                    width={640}
+                    height={400}
+                    class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    loading="lazy"
+                    decoding="async"
+                  />
               </div>
               <div class="flex flex-1 flex-col p-6">
                 <div class="flex items-center justify-between">

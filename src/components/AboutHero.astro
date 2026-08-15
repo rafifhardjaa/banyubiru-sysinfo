@@ -53,6 +53,9 @@ const highlights = [
         width={800}
         height={900}
         class="h-full w-full rounded-[2.5rem] object-cover shadow-2xl ring-1 ring-slate-100"
+        loading="eager"
+        fetchpriority="high"
+        decoding="async"
       />
       <Image
         src={potensi}
@@ -60,6 +63,8 @@ const highlights = [
         width={500}
         height={500}
         class="absolute -bottom-6 -left-6 w-40 -rotate-6 rounded-3xl object-cover shadow-xl ring-4 ring-white sm:-left-10 sm:w-52"
+        loading="eager"
+        decoding="async"
       />
       <div class="absolute -top-6 right-6 rounded-2xl bg-white/90 px-5 py-4 shadow-lg backdrop-blur-md ring-1 ring-slate-100">
         <p class="text-2xl font-extrabold text-brand-700">Sejak 2026</p>

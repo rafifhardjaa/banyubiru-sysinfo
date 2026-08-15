@@ -28,7 +28,10 @@
     }
   });
 
-  window.addEventListener('scroll', updateButton, { passive: true });
-  document.addEventListener('astro:page-load', updateButton);
-  updateButton();
+  document.addEventListener('astro:page-load', () => {
+    if (window._bttScrollReady) return;
+    window._bttScrollReady = true;
+    window.addEventListener('scroll', updateButton, { passive: true });
+    updateButton();
+  });
 </script>

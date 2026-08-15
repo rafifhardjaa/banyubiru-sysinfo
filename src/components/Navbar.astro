@@ -108,6 +108,8 @@ function isActive(href: string): boolean {
     const menu = document.getElementById('mobile-menu');
 
     if (!root || !toggle || !menu) return;
+    if (root.dataset.navReady) return;
+    root.dataset.navReady = 'true';
 
     const open = () => {
       root.classList.add('is-open');
