@@ -27,19 +27,19 @@ const statusStyle = isDone
         loading="lazy"
         decoding="async"
       />
-      <span class="absolute left-4 top-4 inline-flex items-center rounded-full bg-white/90 px-3.5 py-1.5 text-xs font-bold uppercase tracking-widest text-brand-700 shadow-sm backdrop-blur-md">
-        {item.data.prodi}
-      </span>
-      <span class={`absolute right-4 top-4 inline-flex items-center rounded-full px-3.5 py-1.5 text-xs font-bold uppercase tracking-widest shadow-sm backdrop-blur-md ${statusStyle}`}>
-        {item.data.status}
-      </span>
     </div>
   </a>
   <div class="flex flex-1 flex-col p-6">
-    <span class="text-xs font-bold uppercase tracking-widest text-slate-400">
-      {item.data.kategori}
-    </span>
-    <h3 class="mt-2 text-lg font-bold tracking-tight text-slate-900 md:text-xl">
+    <div class="flex items-center justify-between gap-2 flex-wrap mb-3">
+      <span class="inline-block rounded-full border border-teal-200 bg-teal-50 px-2.5 py-1 text-xs font-semibold text-brand-700">
+        {item.data.prodi}
+      </span>
+      <span class="inline-flex items-center gap-1.5 rounded-full border border-amber-200 bg-amber-50 px-2.5 py-1 text-xs font-medium text-amber-700">
+        <span class="h-1.5 w-1.5 rounded-full bg-amber-500"></span>
+        {item.data.status}
+      </span>
+    </div>
+    <h3 class="mt-1 line-clamp-2 text-lg font-bold tracking-tight text-slate-900 md:text-xl">
       <a href={`/proker/${item.id}`} class="transition-colors group-hover:text-brand-700">
         {item.data.title}
       </a>

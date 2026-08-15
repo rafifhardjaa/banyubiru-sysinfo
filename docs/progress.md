@@ -64,3 +64,18 @@
   - Baseline transfer < 200 KB untuk halaman tipikal.
 
 - [x] **Dokumentasi Final**: `STATUS.md.md` diperbarui ke **100% Completed & Production Ready** dengan rekapitulasi audit performa dan daftar lengkap 17 rute statis.
+
+### [Perbaikan Mobile UI] - Hero Button & Proker Card Badges ✅
+
+- [x] **Hero CTA Buttons (`Hero.astro`)**:
+  - Container diubah dari `flex flex-wrap gap-4` → `flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 max-w-md mx-auto sm:max-w-none`.
+  - Tombol full-width di mobile (`w-full sm:w-auto`) dengan padding proporsional (`px-5 py-3`).
+  - Ukuran font: `text-sm md:text-base` dan ikon SVG disesuaikan (`h-4 w-4 md:h-5 md:w-5`).
+
+- [x] **Badge Proker Cards (`ProkerCard.astro`)**:
+  - **HAPUS** positioning `absolute` pada badges prodi & status yang tumpang tindih di atas gambar.
+  - **BUAT** kontainer badge baru di area konten (bawah gambar):
+    `flex items-center justify-between gap-2 flex-wrap mb-3`.
+  - Badge Prodi: `bg-teal-50 text-brand-700 border border-teal-200 rounded-full px-2.5 py-1 text-xs font-semibold`.
+  - Badge Status: `bg-amber-50 text-amber-700 border border-amber-200 rounded-full px-2.5 py-1 text-xs font-medium` dengan indikator dot `bg-amber-500`.
+  - Judul kartu di bawah badge: `mt-1 line-clamp-2 font-bold text-slate-900` — tidak terpotong/tertumpuk.
