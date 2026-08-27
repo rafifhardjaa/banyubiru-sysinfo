@@ -10,13 +10,13 @@ const targetTimestamp = new Date('2026-10-25T09:00:00+07:00').getTime();
     class="relative flex w-full max-w-lg flex-col overflow-hidden rounded-2xl border border-slate-700/60 bg-slate-900 text-white shadow-2xl md:rounded-3xl"
     style="max-height: 88vh;"
   >
-    <div class="pointer-events-none absolute -left-20 -top-20 h-48 w-48 rounded-full bg-teal-500/10 blur-3xl"></div>
-    <div class="pointer-events-none absolute -bottom-20 -right-20 h-48 w-48 rounded-full bg-teal-700/10 blur-3xl"></div>
+    <div class="pointer-events-none absolute -left-20 -top-20 h-48 w-48 rounded-full bg-blue-500/10 blur-3xl"></div>
+    <div class="pointer-events-none absolute -bottom-20 -right-20 h-48 w-48 rounded-full bg-blue-700/10 blur-3xl"></div>
 
     <div class="flex shrink-0 items-center justify-between border-b border-slate-800 p-4 md:p-6">
       <div>
         <span
-          class="inline-flex items-center rounded-full border border-teal-900/60 bg-teal-950/60 px-3 py-1 text-[11px] font-bold uppercase tracking-widest text-teal-400 md:text-xs"
+          class="inline-flex items-center rounded-full border border-blue-900/60 bg-blue-950/60 px-3 py-1 text-[11px] font-bold uppercase tracking-widest text-blue-400 md:text-xs"
         >
           Puncak Pengabdian
         </span>
@@ -41,24 +41,24 @@ const targetTimestamp = new Date('2026-10-25T09:00:00+07:00').getTime();
       <div data-countdown={targetTimestamp}>
         <div class="grid grid-cols-4 gap-2 md:gap-3" data-countdown-boxes>
           <div class="rounded-xl border border-white/5 bg-slate-800/60 p-2 text-center md:p-3">
-            <p data-countdown-unit="hari" class="text-xl font-black tabular-nums text-teal-400 md:text-3xl">00</p>
+            <p data-countdown-unit="hari" class="text-xl font-black tabular-nums text-blue-400 md:text-3xl">00</p>
             <p class="mt-0.5 text-[10px] font-semibold uppercase tracking-wider text-slate-400 md:text-xs">Hari</p>
           </div>
           <div class="rounded-xl border border-white/5 bg-slate-800/60 p-2 text-center md:p-3">
-            <p data-countdown-unit="jam" class="text-xl font-black tabular-nums text-teal-400 md:text-3xl">00</p>
+            <p data-countdown-unit="jam" class="text-xl font-black tabular-nums text-blue-400 md:text-3xl">00</p>
             <p class="mt-0.5 text-[10px] font-semibold uppercase tracking-wider text-slate-400 md:text-xs">Jam</p>
           </div>
           <div class="rounded-xl border border-white/5 bg-slate-800/60 p-2 text-center md:p-3">
-            <p data-countdown-unit="menit" class="text-xl font-black tabular-nums text-teal-400 md:text-3xl">00</p>
+            <p data-countdown-unit="menit" class="text-xl font-black tabular-nums text-blue-400 md:text-3xl">00</p>
             <p class="mt-0.5 text-[10px] font-semibold uppercase tracking-wider text-slate-400 md:text-xs">Menit</p>
           </div>
           <div class="rounded-xl border border-white/5 bg-slate-800/60 p-2 text-center md:p-3">
-            <p data-countdown-unit="detik" class="text-xl font-black tabular-nums text-teal-400 md:text-3xl">00</p>
+            <p data-countdown-unit="detik" class="text-xl font-black tabular-nums text-blue-400 md:text-3xl">00</p>
             <p class="mt-0.5 text-[10px] font-semibold uppercase tracking-wider text-slate-400 md:text-xs">Detik</p>
           </div>
         </div>
         <p
-          class="hidden rounded-xl border border-teal-900/60 bg-teal-950/60 p-4 text-center text-base font-extrabold text-teal-400 md:text-lg"
+          class="hidden rounded-xl border border-blue-900/60 bg-blue-950/60 p-4 text-center text-base font-extrabold text-blue-400 md:text-lg"
           data-countdown-finished
         >
           Pameran Expo Sedang Berlangsung!
@@ -67,38 +67,38 @@ const targetTimestamp = new Date('2026-10-25T09:00:00+07:00').getTime();
 
       <div class="mt-4 space-y-3 md:mt-6 md:space-y-4">
         <div class="flex items-start gap-3 rounded-xl border border-slate-800 bg-slate-800/40 p-3 md:gap-4 md:p-4">
-          <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-teal-950/60 text-sm md:h-10 md:w-10 md:text-base">📍</span>
+          <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-blue-950/60 text-sm md:h-10 md:w-10 md:text-base">📍</span>
           <div>
             <p class="text-xs font-bold text-white md:text-sm">Lokasi</p>
             <p class="mt-0.5 text-xs leading-relaxed text-slate-400 md:text-sm">Lapangan Utama / Balai Desa Banyubiru, Kecamatan Banyubiru, Kabupaten Semarang</p>
           </div>
         </div>
         <div class="flex items-start gap-3 rounded-xl border border-slate-800 bg-slate-800/40 p-3 md:gap-4 md:p-4">
-          <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-teal-950/60 text-sm md:h-10 md:w-10 md:text-base">⏰</span>
+          <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-blue-950/60 text-sm md:h-10 md:w-10 md:text-base">⏰</span>
           <div>
             <p class="text-xs font-bold text-white md:text-sm">Waktu</p>
             <p class="mt-0.5 text-xs leading-relaxed text-slate-400 md:text-sm">Selasa, 25 Oktober 2026 — Pukul 09.00 WIB sampai selesai</p>
           </div>
         </div>
         <div class="flex items-start gap-3 rounded-xl border border-slate-800 bg-slate-800/40 p-3 md:gap-4 md:p-4">
-          <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-teal-950/60 text-sm md:h-10 md:w-10 md:text-base">🎪</span>
+          <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-blue-950/60 text-sm md:h-10 md:w-10 md:text-base">🎪</span>
           <div>
             <p class="text-xs font-bold text-white md:text-sm">Agenda & Rangkaian Acara</p>
             <ul class="mt-1.5 space-y-1 text-xs leading-relaxed text-slate-400 md:mt-2 md:space-y-1.5 md:text-sm">
               <li class="flex items-center gap-2">
-                <span class="inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-teal-500"></span>
+                <span class="inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-blue-500"></span>
                 Demo Teknologi & Inovasi 6 Program Studi FTI
               </li>
               <li class="flex items-center gap-2">
-                <span class="inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-teal-500"></span>
+                <span class="inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-blue-500"></span>
                 Pameran Produk Unggulan UMKM Binaan Warga
               </li>
               <li class="flex items-center gap-2">
-                <span class="inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-teal-500"></span>
+                <span class="inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-blue-500"></span>
                 Talkshow Inspiratif & Pentas Seni Budaya
               </li>
               <li class="flex items-center gap-2">
-                <span class="inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-teal-500"></span>
+                <span class="inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-blue-500"></span>
                 Penandatanganan Komitmen Keberlanjutan Program
               </li>
             </ul>

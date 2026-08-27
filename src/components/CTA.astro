@@ -10,30 +10,30 @@ const formattedDate = new Intl.DateTimeFormat('id-ID', {
 }).format(expoDate);
 ---
 
-<section class="relative overflow-hidden bg-brand-700 py-20 text-white lg:py-28">
-  <div class="pointer-events-none absolute -left-24 -top-24 h-72 w-72 rounded-full bg-brand-500/30 blur-3xl"></div>
-  <div class="pointer-events-none absolute -bottom-24 -right-24 h-72 w-72 rounded-full bg-brand-900/40 blur-3xl"></div>
+<section class="relative overflow-hidden rounded-3xl bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-950 text-white p-8 md:p-14 shadow-2xl my-12">
+  <div class="pointer-events-none absolute -left-24 -top-24 h-72 w-72 rounded-full bg-blue-500/20 blur-3xl"></div>
+  <div class="pointer-events-none absolute -bottom-24 -right-24 h-72 w-72 rounded-full bg-indigo-900/40 blur-3xl"></div>
 
   <div class="relative mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8">
-    <span class="inline-flex items-center rounded-full bg-white/15 px-3.5 py-1.5 text-xs font-bold uppercase tracking-widest text-white ring-1 ring-white/25 backdrop-blur-md">
+    <span class="inline-block px-3 py-1 rounded-full text-xs font-semibold bg-blue-500/20 text-blue-200 border border-blue-400/30 mb-4">
       Puncak Acara • {formattedDate}
     </span>
-    <h2 class="mt-6 text-3xl font-extrabold tracking-tight md:text-4xl lg:text-5xl">
+    <h2 class="text-2xl md:text-4xl lg:text-5xl font-extrabold tracking-tight mb-4 max-w-2xl mx-auto text-center">
       Mari Meriahkan Puncak Pengabdian Kami
     </h2>
-    <p class="mx-auto mt-5 max-w-xl text-base leading-relaxed text-brand-50 md:text-lg">
+    <p class="text-blue-100/90 text-sm md:text-base max-w-xl mx-auto text-center mb-8 leading-relaxed">
       Expo Gelar Karya menjadi saksi puncak perjalanan enam prodi FTI di
       Banyubiru — pameran inovasi, produk olahan, teknologi tepat guna, dan
       cerita perubahan warga dalam satu panggung.
     </p>
-    <div class="mt-9 flex flex-wrap items-center justify-center gap-4">
+    <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
       <button
         id="btn-open-expo"
         type="button"
-        class="inline-flex cursor-pointer items-center gap-2 rounded-full bg-white px-8 py-4 font-bold text-brand-700 shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-lg"
+        class="px-6 py-3 rounded-full bg-white text-blue-900 hover:bg-blue-50 font-bold shadow-lg transition-transform active:scale-95"
       >
         Lihat Jadwal Expo
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 inline" aria-hidden="true">
           <rect x="3" y="4" width="18" height="18" rx="2"></rect>
           <line x1="16" y1="2" x2="16" y2="6"></line>
           <line x1="8" y1="2" x2="8" y2="6"></line>
@@ -42,9 +42,9 @@ const formattedDate = new Intl.DateTimeFormat('id-ID', {
       </button>
       <a
         href="/kontak"
-        class="inline-flex items-center gap-2 rounded-full border border-white/40 px-8 py-4 font-bold text-white transition-all hover:-translate-y-0.5 hover:bg-white/10 hover:border-white"
+        class="px-6 py-3 rounded-full bg-blue-700/60 hover:bg-blue-700 text-white border border-blue-400/30 font-semibold transition-all"
       >
-        Suarakan Dukungan
+        Suarakan Dukungan / Kontak
       </a>
     </div>
   </div>

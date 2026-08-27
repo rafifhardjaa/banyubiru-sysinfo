@@ -79,3 +79,55 @@
   - Badge Prodi: `bg-teal-50 text-brand-700 border border-teal-200 rounded-full px-2.5 py-1 text-xs font-semibold`.
   - Badge Status: `bg-amber-50 text-amber-700 border border-amber-200 rounded-full px-2.5 py-1 text-xs font-medium` dengan indikator dot `bg-amber-500`.
   - Judul kartu di bawah badge: `mt-1 line-clamp-2 font-bold text-slate-900` — tidak terpotong/tertumpuk.
+
+### [Refaktor Tema DPL] - Royal Blue & Hapus Progress Bar ✅
+
+- [x] **Palet Brand diubah dari Teal → Royal Blue (`tailwind.config.mjs`)**:
+  - `brand-50`: `#f0fdfa` → `#eff6ff` (blue-50)
+  - `brand-100`: `#ccfbf1` → `#dbeafe` (blue-100)
+  - `brand-200`: `#99f6e4` → `#bfdbfe` (blue-200)
+  - `brand-300`: `#5eead4` → `#93c5fd` (blue-300)
+  - `brand-400`: `#2dd4bf` → `#60a5fa` (blue-400)
+  - `brand-500`: `#14b8a6` → `#3b82f6` (blue-500)
+  - `brand-600`: `#0d9488` → `#2563eb` (blue-600)
+  - `brand-700`: `#0f766e` → `#1d4ed8` (blue-700)
+  - `brand-800`: `#115e59` → `#1e40af` (blue-800)
+  - `brand-900`: `#134e4a` → `#1e3a8a` (blue-900)
+  - Semua class `brand-*` di 25+ file otomatis ter-update — tombol, badge, border, ring, gradient, link hover, dll.
+
+- [x] **Semua `teal-*` diubah ke `blue-*`**:
+  - `ExpoModal.astro` (16 occurrences): blur bg, badge header, countdown angka, finished message, icon container, bullet dots — semua dari `teal-*` ke `blue-*`.
+  - `Countdown.astro` (4 occurrences): label dari `text-teal-200` ke `text-blue-200`.
+
+- [x] **Semua `emerald-*` diubah ke `blue-*`**:
+  - `ProkerCard.astro`: status style `bg-emerald-500/90` → `bg-blue-500/90`.
+  - `proker/[...slug].astro`: status style & checkmark icon `text-emerald-600` → `text-blue-600`.
+
+- [x] **Progress Bar Dihapus dari Semua Kartu & Detail Proker**:
+  - `ProkerCard.astro`: Hapus seluruh blok progress bar (persentase, bar visual, label "Progres Pengerjaan").
+  - `proker/[...slug].astro`: Hapus progress bar dari sidebar meta-card.
+  - Tampilan kartu lebih bersih, fokus pada substansi luaran program & metadata.
+
+- [x] **Theme color diselaraskan**: `Layout.astro` meta `theme-color` dari `#0f766e` → `#1d4ed8` (blue-700).
+
+### [Visual Enhancement] - Global Velocity Marquee & Stacked Cards (Zero-JS) ✅
+
+- [x] **Tailwind Keyframes (`tailwind.config.mjs`)**:
+  - Keyframe `marquee`: `translateX(0%)` → `translateX(-100%)`.
+  - Keyframe `marquee2`: `translateX(100%)` → `translateX(0%)`.
+  - Animasi `animate-marquee` (28s linear infinite) dan `animate-marquee2`.
+
+- [x] **Global Velocity Marquee (`VelocityMarquee.astro`)**:
+  - Strip teks berjalan murni CSS (zero JS), GPU-accelerated, kompatibel ViewTransitions.
+  - Background `bg-slate-900` dengan teks `text-blue-300`.
+  - 2 layer container sejajar: `animate-marquee` + `animate-marquee2` untuk looping tanpa jeda.
+  - Hover pause: `hover:[animation-play-state:paused]`.
+  - Fade gradient di kiri/kanan: `bg-gradient-to-r/l from-slate-900 to-transparent`.
+  - Dipasang di `Layout.astro` tepat di atas `<Footer />` → muncul di seluruh 17 rute.
+
+- [x] **Stacked Sticky Cards (`ProkerGrid.astro`)**:
+  - Mobile (< `md`): layout grid vertikal normal (1 kolom).
+  - Desktop (`md+`): kartu overlap dengan `sticky` + `top` incrementing per kartu:
+    - Kartu 1: `sticky top-24 z-10`, Kartu 2: `sticky top-32 z-20`, dst.
+    - Latar belakang: `bg-white/95 backdrop-blur-md rounded-3xl border shadow-lg mb-8`.
+  - Zero JavaScript — murni CSS `position: sticky`.

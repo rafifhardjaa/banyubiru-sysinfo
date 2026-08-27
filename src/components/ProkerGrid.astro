@@ -4,7 +4,7 @@ import ProkerCard from './ProkerCard.astro';
 
 const proker = (await getCollection('proker'))
   .sort((a, b) => a.data.order - b.data.order)
-  .slice(0, 4);
+  .slice(0, 6);
 ---
 
 <section id="proker" class="scroll-mt-24 bg-slate-50 py-20 lg:py-28">
@@ -22,9 +22,11 @@ const proker = (await getCollection('proker'))
       </p>
     </div>
 
-    <ul class="mt-14 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
-      {proker.map((item) => <ProkerCard item={item} />)}
-    </ul>
+    <div class="mt-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+      {proker.map((item) => (
+        <ProkerCard item={item} />
+      ))}
+    </div>
 
     <div class="mt-12 text-center">
       <a

@@ -109,10 +109,14 @@
             "id": "7874849db5d92d3e",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Graph view"
+              "type": "markdown",
+              "state": {
+                "file": "SCHEMA.md.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "SCHEMA.md"
             }
           }
         ],
@@ -282,15 +286,15 @@
   },
   "active": "7874849db5d92d3e",
   "lastOpenFiles": [
-    "PRD.md.md",
-    "SCHEMA.md.md",
     "STATUS.md.md",
-    "PROGRESS.md.md",
-    "DESICION.md.md",
-    "RULES.md.md",
-    "DESIGN.md.md",
     "ARCITECTURE.md.md",
+    "DESICION.md.md",
+    "DESIGN.md.md",
+    "PRD.md.md",
     "README.md.md",
+    "SCHEMA.md.md",
+    "PROGRESS.md.md",
+    "RULES.md.md",
     "Welcome.md"
   ]
 }
