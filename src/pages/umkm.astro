@@ -43,9 +43,9 @@ function resolveImage(id: string): string {
       </div>
 
       <ul class="mt-14 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-        {umkmList.map((item) => (
+        {umkmList.map((item, index) => (
           <li>
-            <UmkmCard umkm={item} image={resolveImage(item.id)} />
+            <UmkmCard umkm={item} image={resolveImage(item.id)} index={index} />
           </li>
         ))}
       </ul>

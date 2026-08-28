@@ -1,6 +1,4 @@
 ---
-import ExpoModal from './ExpoModal.astro';
-
 const expoDate = new Date('2026-08-25T09:00:00+07:00');
 const formattedDate = new Intl.DateTimeFormat('id-ID', {
   weekday: 'long',
@@ -19,35 +17,27 @@ const formattedDate = new Intl.DateTimeFormat('id-ID', {
       Puncak Acara • {formattedDate}
     </span>
     <h2 class="text-2xl md:text-4xl lg:text-5xl font-extrabold tracking-tight mb-4 max-w-2xl mx-auto text-center">
-      Mari Meriahkan Puncak Pengabdian Kami
+      Rekam Jejak & Dedikasi Nyata di Banyubiru
     </h2>
     <p class="text-blue-100/90 text-sm md:text-base max-w-xl mx-auto text-center mb-8 leading-relaxed">
-      Expo Gelar Karya menjadi saksi puncak perjalanan enam prodi FTI di
-      Banyubiru — pameran inovasi, produk olahan, teknologi tepat guna, dan
-      cerita perubahan warga dalam satu panggung.
+      Telusuri dokumentasi visual, luaran inovasi teknologi, dan warta kolaborasi enam program studi FTI bersama masyarakat Banyubiru.
     </p>
     <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-      <button
-        id="btn-open-expo"
-        type="button"
-        class="px-6 py-3 rounded-full bg-white text-blue-900 hover:bg-blue-50 font-bold shadow-lg transition-transform active:scale-95"
+      <a
+        href="/galeri"
+        class="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-white text-blue-900 hover:bg-blue-50 font-bold shadow-lg shadow-blue-950/20 transition-all active:scale-95 text-sm md:text-base"
       >
-        Lihat Jadwal Expo
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 inline" aria-hidden="true">
-          <rect x="3" y="4" width="18" height="18" rx="2"></rect>
-          <line x1="16" y1="2" x2="16" y2="6"></line>
-          <line x1="8" y1="2" x2="8" y2="6"></line>
-          <line x1="3" y1="10" x2="21" y2="10"></line>
+        <span>Dokumentasi & Galeri</span>
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
         </svg>
-      </button>
+      </a>
       <a
         href="/kontak"
-        class="px-6 py-3 rounded-full bg-blue-700/60 hover:bg-blue-700 text-white border border-blue-400/30 font-semibold transition-all"
+        class="inline-flex items-center justify-center px-6 py-3.5 rounded-full bg-blue-700/50 hover:bg-blue-700 text-white border border-blue-400/30 font-semibold transition-all text-sm md:text-base"
       >
-        Suarakan Dukungan / Kontak
+        Hubungi Kami
       </a>
     </div>
   </div>
 </section>
-
-<ExpoModal />

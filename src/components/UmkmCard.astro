@@ -5,9 +5,10 @@ import type { CollectionEntry } from 'astro:content';
 interface Props {
   umkm: CollectionEntry<'umkm'>;
   image: string;
+  index?: number;
 }
 
-const { umkm, image } = Astro.props;
+const { umkm, image, index = 0 } = Astro.props;
 ---
 
 <article class="group flex flex-col overflow-hidden rounded-[2rem] border border-slate-100 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
@@ -18,8 +19,9 @@ const { umkm, image } = Astro.props;
       width={800}
       height={600}
       class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-      loading="lazy"
+      loading={index < 3 ? 'eager' : 'lazy'}
       decoding="async"
+      fetchpriority={index < 3 ? 'high' : undefined}
     />
     <span class="absolute left-4 top-4 inline-flex items-center rounded-full bg-white/90 px-3.5 py-1.5 text-xs font-bold uppercase tracking-widest text-brand-700 shadow-sm backdrop-blur-md">
       {umkm.data.category}
