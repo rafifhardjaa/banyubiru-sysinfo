@@ -5,7 +5,7 @@ kategori: "Digitalisasi & IoT"
 ringkasan: "Digitalisasi layanan informasi desa dan implementasi solusi IoT menuju puncak Expo Gelar Karya pengabdian."
 status: "Tahap Finalisasi"
 progressPercent: 80
-lokasi: "Kantor Desa & Rumah UMKM, Desa Banyubiru"
+lokasi: "Kantor Desa & Rumah UMKM, Desa Kebondowo"
 image: "informatika"
 targetLuaran:
   - "1 platform sistem informasi desa terintegrasi"
@@ -20,7 +20,7 @@ order: 6
 
 ## Urgensi Masalah Desa
 
-Desa Banyubiru membutuhkan sistem informasi yang mampu menyatukan data
+Desa Kebondowo membutuhkan sistem informasi yang mampu menyatukan data
 kependudukan, layanan administrasi, dan profil potensi desa yang saat ini
 tersebar dan masih manual. Di sisi lain, pelaku UMKM belum memanfaatkan
 teknologi digital untuk pemasaran, pencatatan keuangan, dan pemantauan usaha.

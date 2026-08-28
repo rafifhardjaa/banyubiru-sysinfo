@@ -5,7 +5,7 @@ kategori: "Tata Ruang & Wisata"
 ringkasan: "Perancangan masterplan dan maket tata ruang dusun sebagai panduan pembangunan yang tertata dan berkelanjutan."
 status: "Tahap Finalisasi"
 progressPercent: 90
-lokasi: "Seluruh Dusun, Desa Banyubiru"
+lokasi: "Seluruh Dusun, Desa Kebondowo"
 image: "arsitektur"
 targetLuaran:
   - "4 dokumen masterplan tata ruang per dusun"
@@ -20,7 +20,7 @@ order: 4
 
 ## Urgensi Masalah Desa
 
-Desa Banyubiru memiliki lanskap khas kawasan rawa, pertanian, dan permukiman
+Desa Kebondowo memiliki lanskap khas kawasan rawa, pertanian, dan permukiman
 yang belum tertata dalam rencana pembangunan jangka panjang. Pertumbuhan
 bangunan yang tidak teratur menyulitkan pengembangan potensi wisata,
 penataan fasilitas umum, dan mitigasi risiko lingkungan. Pemerintah desa

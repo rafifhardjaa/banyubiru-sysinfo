@@ -5,7 +5,7 @@ kategori: "Digitalisasi & IoT"
 ringkasan: "Penerangan jalan otomatis hemat energi untuk keamanan dan kenyamanan aktivitas warga di malam hari."
 status: "Selesai"
 progressPercent: 100
-lokasi: "Jalan Poros Desa Banyubiru"
+lokasi: "Jalan Poros Desa Kebondowo"
 image: "elektro"
 targetLuaran:
   - "18 titik lampu PJU cerdas terpasang di jalan poros desa"

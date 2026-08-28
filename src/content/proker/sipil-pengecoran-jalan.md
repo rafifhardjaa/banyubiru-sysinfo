@@ -5,7 +5,7 @@ kategori: "Infrastruktur"
 ringkasan: "Revitalisasi akses jalan vital desa melalui gotong royong lintas prodi bersama warga Banyubiru."
 status: "Selesai"
 progressPercent: 100
-lokasi: "Dusun Ngasinan & Dusun Rowoboni, Desa Banyubiru"
+lokasi: "Dusun Ngasinan & Dusun Rowoboni, Desa Kebondowo"
 image: "sipil"
 targetLuaran:
   - "1,2 km ruas jalan vital desa dicor dan diperbaiki"

@@ -5,7 +5,7 @@ kategori: "Inovasi Pangan"
 ringkasan: "Pendampingan pengolahan ikan rawa menjadi produk bernilai tambah serta pembinaan sertifikasi PIRT bagi UMKM."
 status: "Selesai"
 progressPercent: 100
-lokasi: "Kelompok UMKM Pangan, Desa Banyubiru"
+lokasi: "Kelompok UMKM Pangan, Desa Kebondowo"
 image: "pangan"
 targetLuaran:
   - "8 varian produk olahan ikan rawa dikembangkan"

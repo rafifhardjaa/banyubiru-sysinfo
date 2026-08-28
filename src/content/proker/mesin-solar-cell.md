@@ -5,7 +5,7 @@ kategori: "Energi Terbarukan"
 ringkasan: "Pemasangan panel surya skala rumah untuk menghadirkan energi mandiri dan terbarukan bagi warga desa."
 status: "Selesai"
 progressPercent: 100
-lokasi: "Dusun Krajan & Dusun Ngasinan, Desa Banyubiru"
+lokasi: "Dusun Krajan & Dusun Ngasinan, Desa Kebondowo"
 image: "mesin"
 targetLuaran:
   - "12 unit panel surya 200 WP terpasang di rumah warga"
@@ -20,7 +20,7 @@ order: 1
 
 ## Urgensi Masalah Desa
 
-Desa Banyubiru berada di kawasan rawa dengan intensitas penyinaran matahari
+Desa Kebondowo berada di kawasan rawa dengan intensitas penyinaran matahari
 yang tinggi, namun potensi tersebut belum dimanfaatkan untuk kebutuhan energi
 rumah tangga. Sebagian warga menggantungkan listrik pada jaringan umum yang
 sering mengalami pemadaman, sementara beban konsumsi listrik terus meningkat

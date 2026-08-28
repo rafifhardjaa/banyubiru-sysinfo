@@ -131,3 +131,34 @@
     - Kartu 1: `sticky top-24 z-10`, Kartu 2: `sticky top-32 z-20`, dst.
     - Latar belakang: `bg-white/95 backdrop-blur-md rounded-3xl border shadow-lg mb-8`.
   - Zero JavaScript — murni CSS `position: sticky`.
+### [Refaktor Lokus] - Desa Kebondowo, Kecamatan Banyubiru ✅
+
+- [x] **Metadata Global (`Layout.astro`)**:
+  - Title default: `FTI Banyubiru • Desa Kebondowo | Portal Pengabdian Masyarakat`.
+  - Meta description: sinergi kolaborasi 6 program studi FTI di Desa Kebondowo, Kecamatan Banyubiru, Kabupaten Semarang.
+
+- [x] **Hero Section (`Hero.astro`)**:
+  - Deskripsi: `"Dari Desa Kebondowo di lereng Rawa Pening, Kecamatan Banyubiru, enam program studi FTI bergerak bersama warga..."`.
+  - Sub-label gambar: `"Desa Kebondowo • Rawa Pening, Banyubiru"`.
+
+- [x] **Laman Tentang (`tentang.astro`, `AboutHero.astro`, `BentoStory.astro`)**:
+  - Profil wilayah diperjelas: Desa Kebondowo sebagai lokus pengabdian dengan potensi pertanian, perikanan Rawa Pening, dan UMKM lokal.
+
+- [x] **CTA (`CTA.astro`)**:
+  - Headline: `"Rekam Jejak & Dedikasi Nyata di Desa Kebondowo"`.
+  - Copy: kolaborasi mahasiswa bersama warga Desa Kebondowo, Kecamatan Banyubiru.
+
+- [x] **Alamat & Kontak (`kontak.astro`, `Footer.astro`)**:
+  - Alamat: `Balai Desa Kebondowo / Posko Pengmas FTI, Jl. Raya Kebondowo - Banyubiru, Kec. Banyubiru, Kab. Semarang, Jawa Tengah.`.
+  - Google Maps query: `Desa Kebondowo, Banyubiru, Semarang` dengan `loading="eager"`.
+  - Kolom Terhubung Footer: `Desa Kebondowo, Kawasan Rawa Pening, Kecamatan Banyubiru, Kabupaten Semarang, Jawa Tengah.`.
+
+- [x] **Data UMKM (`src/content/umkm/*.json`)**:
+  - Seluruh field `hamlet` diperbarui ke `"Dusun X, Desa Kebondowo"`.
+
+- [x] **Data Berita & Proker (`src/content/berita/*.md`, `src/content/proker/*.md`)**:
+  - Seluruh referensi `"Desa Banyubiru"` → `"Desa Kebondowo"`.
+  - `"Balai Desa Banyubiru"` → `"Balai Desa Kebondowo"`.
+  - `"Kepala Desa Banyubiru"` → `"Kepala Desa Kebondowo"`.
+
+- [x] **Build**: `npm run build` → 17 halaman sukses, **zero error**.

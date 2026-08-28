@@ -9,7 +9,7 @@ readTime: "4 min read"
 featured: false
 ---
 
-Program diversifikasi olahan pangan yang diinisiasi oleh prodi Teknologi Pangan FTI berhasil mendorong inovasi produk bagi para pelaku UMKM binaan di Desa Banyubiru. Melalui serangkaian workshop dan pendampingan intensif, sebanyak 15 UMKM berhasil mengembangkan lebih dari 20 varian produk baru.
+Program diversifikasi olahan pangan yang diinisiasi oleh prodi Teknologi Pangan FTI berhasil mendorong inovasi produk bagi para pelaku UMKM binaan di Desa Kebondowo. Melalui serangkaian workshop dan pendampingan intensif, sebanyak 15 UMKM berhasil mengembangkan lebih dari 20 varian produk baru.
 
 **Inovasi Produk Unggulan**
 
