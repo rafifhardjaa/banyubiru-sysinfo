@@ -76,7 +76,6 @@ const galeriCollection = defineCollection({
     ]),
     date: z.coerce.date(),
     image: z.string(),
-    aspect: z.enum(['landscape', 'portrait']),
     order: z.number(),
   }),
 });
