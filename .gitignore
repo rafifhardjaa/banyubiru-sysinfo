@@ -3,3 +3,7 @@ dist/
 .astro/
 .env
 .DS_Store
+
+# artefak kerja lokal: screenshot review dan browser automation
+.hallmark/
+.playwright-mcp/
