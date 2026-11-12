@@ -1,6 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import ProkerCard from '../../components/ProkerCard.astro';
+import ProkerRow from '../../components/ProkerRow.astro';
 import { getCollection } from 'astro:content';
 
 const proker = (await getCollection('proker')).sort(
@@ -8,27 +8,24 @@ const proker = (await getCollection('proker')).sort(
 );
 ---
 
-<Layout title="Program Kerja 6 Prodi | FTI Banyubiru">
-  <section class="bg-slate-50 py-20 lg:py-28">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <div class="mx-auto max-w-3xl text-center">
-        <span class="inline-flex items-center rounded-full border border-brand-100 bg-brand-50 px-3.5 py-1.5 text-xs font-bold uppercase tracking-widest text-brand-700">
-          Program Kerja 6 Prodi FTI
-        </span>
-        <h1 class="mt-6 text-3xl font-extrabold tracking-tight text-slate-900 md:text-4xl lg:text-5xl">
-          Ragam Inovasi & Dedikasi 6 Program Studi FTI di Banyubiru
-        </h1>
-        <p class="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-slate-600 md:text-lg">
-          Enam program studi Fakultas Teknologi Informasi menerjemahkan
-          keahliannya menjadi aksi nyata yang saling melengkapi — dari energi,
-          infrastruktur, hingga digitalisasi — demi kesejahteraan warga
-          Kecamatan Banyubiru.
-        </p>
-      </div>
+<Layout
+  title="Program kerja | Banyubiru"
+  description="Enam program kerja Fakultas Teknologi Informasi di Desa Kebondowo: energi surya, pengecoran jalan, olahan pangan, tata ruang, dan digitalisasi UMKM."
+>
+  <section class="wrap pt-10 sm:pt-14">
+    <h1 class="mt-4 max-w-[18ch] font-display text-[clamp(2.4rem,5.5vw,4.2rem)] font-semibold leading-[1] tracking-tightest">
+      Enam pekerjaan, enam prodi, satu desa.
+    </h1>
+    <p class="lede mt-6">
+      Setiap program berasal dari kebutuhan yang disepakati bersama warga.
+      Buka satu untuk melihat lokasi, penanggung jawab, dan luaran yang
+      dijanjikan.
+    </p>
+  </section>
 
-      <ul class="mt-14 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-        {proker.map((item) => <ProkerCard item={item} />)}
-      </ul>
-    </div>
+  <section class="wrap mt-12">
+    {proker.map((item, index) => (
+      <ProkerRow item={item} index={index} flip={index % 2 === 1} />
+    ))}
   </section>
 </Layout>

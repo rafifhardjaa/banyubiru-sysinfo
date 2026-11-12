@@ -1,80 +1,48 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import UmkmCard from '../components/UmkmCard.astro';
-import CTA from '../components/CTA.astro';
+import EndNote from '../components/EndNote.astro';
 import { getCollection } from 'astro:content';
-
-const umkmImages = import.meta.glob('../assets/umkm/*.svg', {
-  eager: true,
-  import: 'default',
-}) as Record<string, string>;
 
 const umkmList = (await getCollection('umkm')).sort(
   (a, b) => a.data.order - b.data.order,
 );
-
-function resolveImage(id: string): string {
-  return umkmImages[`../assets/umkm/${id}.svg`] ?? Object.values(umkmImages)[0];
-}
 ---
 
 <Layout
-  title="Pemberdayaan UMKM | Kecamatan Banyubiru"
-  description="Katalog UMKM unggulan Kecamatan Banyubiru hasil pendampingan pengabdian masyarakat FTI: olahan pangan, kerajinan, dan minuman tradisional."
-  type="website"
+  title="UMKM warga | Banyubiru"
+  description="Direktori usaha warga Desa Kebondowo hasil pendampingan FTI: olahan pangan, kerajinan, dan minuman tradisional, lengkap dengan kontak penjual."
 >
-  <section class="relative overflow-hidden bg-slate-50">
-    <div class="pointer-events-none absolute -right-24 -top-24 h-80 w-80 rounded-full bg-brand-50 blur-3xl"></div>
+  <section class="wrap pt-6 sm:pt-8">
+    <h1 class="mt-4 max-w-[18ch] text-[clamp(2.4rem,4.4vw,4.25rem)]">
+      Usaha kecil yang menjaga desa tetap hidup.
+    </h1>
+    <p class="lede mt-6">
+      Enam usaha warga yang didampingi tim pengabdian. Setiap entri memuat
+      pemilik, lokasi dusun, dan kontak WhatsApp yang bisa langsung dihubungi.
+    </p>
+  </section>
 
-    <div class="relative mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
-      <div class="mx-auto max-w-2xl text-center">
-        <span class="inline-flex items-center gap-2 rounded-full border border-brand-100 bg-brand-50 px-3.5 py-1.5 text-xs font-bold uppercase tracking-widest text-brand-700">
-          <span class="h-1.5 w-1.5 rounded-full bg-brand-500"></span>
-          Pemberdayaan UMKM
-        </span>
-        <h1 class="mt-6 text-3xl font-extrabold tracking-tight text-slate-900 md:text-4xl lg:text-5xl">
-          Sentra Kreasi &amp; Ekonomi Warga Banyubiru
-        </h1>
-        <p class="mt-5 text-base leading-relaxed text-slate-600 md:text-lg">
-          Melalui pendampingan digitalisasi oleh tim pengabdian FTI, usaha
-          mikro warga diangkat ke panggung yang lebih luas — dari gerobak dan
-          dapur rumah, hingga direktorinya sendiri di ruang digital.
+  <section class="wrap mt-section-s">
+    {
+      umkmList.length === 0 ? (
+        <p class="border-t border-ink/30 py-8 text-base text-ink-soft">
+          Direktori masih kosong. Data usaha akan diisi setelah pendataan
+          bersama perangkat desa.
         </p>
-      </div>
-
-      <ul class="mt-14 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-        {umkmList.map((item, index) => (
-          <li>
-            <UmkmCard umkm={item} image={resolveImage(item.id)} index={index} />
-          </li>
-        ))}
-      </ul>
-    </div>
+      ) : (
+        umkmList.map((item, index) => (
+          <UmkmCard umkm={item} index={index} flip={index % 2 === 1} />
+        ))
+      )
+    }
   </section>
 
-  <section class="bg-white py-16 lg:py-20">
-    <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-      <div class="flex flex-col items-center justify-between gap-8 rounded-[2rem] bg-slate-900 p-10 text-center md:flex-row md:text-left lg:p-14">
-        <div>
-          <h2 class="text-2xl font-extrabold tracking-tight text-white md:text-3xl">
-            Punya Usaha di Banyubiru?
-          </h2>
-          <p class="mt-3 max-w-md text-sm leading-relaxed text-slate-300 md:text-base">
-            Daftarkan UMKM Anda ke direktori desa dan jangkau lebih banyak
-            pembeli. Tim kami siap membantu promosi digital Anda secara gratis.
-          </p>
-        </div>
-        <a
-          href="/kontak"
-          class="inline-flex shrink-0 items-center gap-2 rounded-full bg-brand-700 px-8 py-4 font-bold text-white shadow-sm transition-all hover:-translate-y-0.5 hover:bg-brand-800 hover:shadow-lg"
-        >
-          Daftarkan UMKM Anda
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5" aria-hidden="true">
-            <line x1="5" y1="12" x2="19" y2="12"></line>
-            <polyline points="12 5 19 12 12 19"></polyline>
-          </svg>
-        </a>
-      </div>
-    </div>
-  </section>
+  <EndNote
+    date="Pendaftaran UMKM"
+    title="Punya usaha di Banyubiru?"
+    body="Tim pengabdian membantu pembuatan katalog dan foto produk tanpa biaya. Hubungi posko untuk menjadwalkan pendataan."
+    href="/kontak"
+    linkLabel="Hubungi posko"
+  />
 </Layout>

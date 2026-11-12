@@ -1,14 +1,11 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
-import { Image } from 'astro:assets';
-import { resolveBeritaImage } from '../../lib/beritaAssets';
+import Figure from '../../components/Figure.astro';
+import { illustrationFor } from '../../lib/illustration';
 
 const berita = (await getCollection('berita'))
   .sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf());
-
-const featured = berita.find((b) => b.data.featured) ?? berita[0];
-const reguler = berita.filter((b) => b.id !== featured.id);
 
 function formatDate(date: Date): string {
   return new Intl.DateTimeFormat('id-ID', {
@@ -19,114 +16,59 @@ function formatDate(date: Date): string {
 }
 ---
 
-<Layout title="Kabar & Dokumentasi Pengabdian | FTI Banyubiru">
-  <section class="bg-white py-16 lg:py-24">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <div class="text-center">
-        <span class="inline-flex items-center rounded-full border border-brand-100 bg-brand-50 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-brand-700">
-          Warta Pengmas
-        </span>
-        <h1 class="mt-6 text-3xl font-extrabold tracking-tight text-slate-900 md:text-4xl lg:text-5xl">
-          Kabar & Rekapitulasi Kegiatan FTI di Banyubiru
-        </h1>
-        <p class="mx-auto mt-4 max-w-2xl text-lg leading-relaxed text-slate-600">
-          Dokumentasi, cerita, dan rekam jejak digital berbagai kegiatan pengabdian
-          masyarakat lintas program studi di Kecamatan Banyubiru.
+<Layout title="Catatan lapangan | Banyubiru" description="Catatan, rekap kegiatan, dan cerita lapangan FTI di Desa Kebondowo.">
+  <section class="wrap pt-10 sm:pt-14">
+    <h1 class="mt-4 max-w-[18ch] font-display text-[clamp(2.4rem,4.4vw,4.25rem)] font-semibold leading-[1] tracking-tightest">
+      Catatan dari tanah desa.
+    </h1>
+    <p class="lede mt-6">
+      Catatan, rekap kegiatan, dan cerita lapangan dari berbagai program pengabdian
+      FTI di Kecamatan Banyubiru.
+    </p>
+  </section>
+
+  <section class="wrap mt-section-s">
+    <div class="space-y-12">
+      {berita.map((post) => (
+        <article class="group grid gap-6 md:grid-cols-[16fr_8fr] md:items-start">
+          <div class="aspect-[16/9] overflow-hidden rounded-xl border border-line bg-paper">
+            <Figure
+              src={illustrationFor(post.data.category)}
+              alt={`Ilustrasi untuk catatan: ${post.data.title}`}
+              ratio="aspect-[16/9]"
+              caption={`Foto ilustrasi. Dokumentasi kegiatan menyusul. — ${post.data.title}`}
+            />
+          </div>
+          <div class="space-y-3">
+            <p class="label">{formatDate(post.data.publishDate)}</p>
+            <h3 class="font-display text-2xl font-semibold tracking-tight text-ink">
+              <a href={`/berita/${post.id}`} class="underline decoration-line underline-offset-4 hover:text-danau">
+                {post.data.title}
+              </a>
+            </h3>
+            <p class="text-sm leading-relaxed text-ink-soft">
+              {post.data.summary}
+            </p>
+            <p class="text-xs text-ink-mute">
+              {post.data.author} · {post.data.readTime}
+            </p>
+          </div>
+        </article>
+      ))}
+    </div>
+
+    <div class="mt-16 grid gap-6 sm:grid-cols-2">
+      <div class="border border-line bg-paper-light p-6">
+        <h2 class="font-display font-semibold leading-[1.05] tracking-display text-[var(--text-section)]">Pembahasan</h2>
+        <p class="mt-2 text-sm leading-relaxed text-ink-soft">
+          Pilihan catatan dari wawasan teknologi, inovasi pangan, dan digitalisasi lapangan.
         </p>
       </div>
-
-      {
-        featured && (
-          <a href={`/berita/${featured.id}`} class="group mt-14 block">
-            <div class="flex flex-col overflow-hidden rounded-[2rem] border border-slate-100 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md md:flex-row">
-              <div class="relative aspect-[16/9] md:w-3/5 lg:w-3/5">
-                <Image
-                  src={resolveBeritaImage(featured.id)}
-                  alt={featured.data.title}
-                  width={960}
-                  height={540}
-                  class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  loading="eager"
-                  fetchpriority="high"
-                  decoding="async"
-                />
-                <span class="absolute left-4 top-4 inline-flex items-center rounded-full bg-brand-700 px-3.5 py-1.5 text-xs font-bold uppercase tracking-widest text-white shadow-lg">
-                  Berita Utama
-                </span>
-              </div>
-              <div class="flex flex-1 flex-col justify-center p-6 lg:p-10">
-                <span class="inline-flex w-fit items-center rounded-full bg-brand-50 px-3 py-1 text-xs font-bold uppercase tracking-widest text-brand-700">
-                  {featured.data.category}
-                </span>
-                <h2 class="mt-4 text-xl font-extrabold tracking-tight text-slate-900 transition-colors group-hover:text-brand-700 md:text-2xl lg:text-3xl">
-                  {featured.data.title}
-                </h2>
-                <p class="mt-3 line-clamp-3 text-base leading-relaxed text-slate-600">
-                  {featured.data.summary}
-                </p>
-                <div class="mt-5 flex items-center gap-4 text-sm font-semibold text-slate-400">
-                  <span>{featured.data.author}</span>
-                  <span class="inline-block h-1 w-1 rounded-full bg-slate-300"></span>
-                  <time datetime={featured.data.publishDate.toISOString()}>{formatDate(featured.data.publishDate)}</time>
-                  <span class="inline-block h-1 w-1 rounded-full bg-slate-300"></span>
-                  <span>{featured.data.readTime}</span>
-                </div>
-              </div>
-            </div>
-          </a>
-        )
-      }
-
-      <div class="mt-16">
-        <div class="mb-10 flex items-center gap-4">
-          <span class="h-px flex-1 bg-slate-200"></span>
-          <span class="text-sm font-bold uppercase tracking-widest text-slate-400">Artikel Lainnya</span>
-          <span class="h-px flex-1 bg-slate-200"></span>
-        </div>
-
-        <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {reguler.map((item, index) => (
-            <a href={`/berita/${item.id}`} class="group flex flex-col overflow-hidden rounded-[2rem] border border-slate-100 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md reveal-on-scroll">
-              <div class="relative aspect-[16/10] overflow-hidden">
-<Image
-                    src={resolveBeritaImage(item.id)}
-                    alt={item.data.title}
-                    width={640}
-                    height={400}
-                    class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    loading={index < 3 ? 'eager' : 'lazy'}
-                    decoding="async"
-                    fetchpriority={index < 3 ? 'high' : undefined}
-                  />
-              </div>
-              <div class="flex flex-1 flex-col p-6">
-                <div class="flex items-center justify-between">
-                  <span class="inline-flex items-center rounded-full bg-brand-50 px-3 py-1 text-xs font-bold uppercase tracking-widest text-brand-700">
-                    {item.data.category}
-                  </span>
-                  <time class="text-xs font-semibold text-slate-400" datetime={item.data.publishDate.toISOString()}>
-                    {formatDate(item.data.publishDate)}
-                  </time>
-                </div>
-                <h3 class="mt-4 text-lg font-bold leading-snug tracking-tight text-slate-900 transition-colors group-hover:text-brand-700 md:text-xl">
-                  {item.data.title}
-                </h3>
-                <p class="mt-2 line-clamp-2 text-sm leading-relaxed text-slate-600 md:line-clamp-3">
-                  {item.data.summary}
-                </p>
-                <div class="mt-auto pt-5">
-                  <span class="inline-flex items-center gap-1.5 text-sm font-bold text-brand-700 transition-colors group-hover:text-brand-800">
-                    Baca Selengkapnya
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4" aria-hidden="true">
-                      <line x1="5" y1="12" x2="19" y2="12"></line>
-                      <polyline points="12 5 19 12 12 19"></polyline>
-                    </svg>
-                  </span>
-                </div>
-              </div>
-            </a>
-          ))}
-        </div>
+      <div class="border border-line bg-paper-light p-6">
+        <h2 class="font-display font-semibold leading-[1.05] tracking-display text-[var(--text-section)]">Kontributor</h2>
+        <p class="mt-2 text-sm leading-relaxed text-ink-soft">
+          Catatan ditulis oleh Divisi Media &amp; IT FTI, dipantau dari tim pengabdian.
+        </p>
       </div>
     </div>
   </section>

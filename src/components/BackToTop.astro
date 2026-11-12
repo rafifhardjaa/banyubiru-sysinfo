@@ -2,11 +2,10 @@
   type="button"
   data-back-to-top
   aria-label="Kembali ke atas halaman"
-  class="fixed bottom-8 right-8 z-50 rounded-full bg-brand-700 p-3.5 text-white opacity-0 shadow-xl transition-all duration-300 hover:-translate-y-1 hover:bg-brand-800 pointer-events-none"
+  class="fixed bottom-6 right-5 z-40 inline-flex h-11 w-11 items-center justify-center rounded-pill border border-ink/30 bg-paper-light text-ink opacity-0 shadow-card transition-opacity hover:bg-paper-deep sm:bottom-8 sm:right-8"
 >
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6" aria-hidden="true">
-    <line x1="12" y1="19" x2="12" y2="5"></line>
-    <polyline points="5 12 12 5 19 12"></polyline>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="h-5 w-5" aria-hidden="true">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M12 19V5M5 12l7-7 7 7"></path>
   </svg>
 </button>
 
@@ -14,24 +13,23 @@
   function updateButton() {
     const button = document.querySelector('[data-back-to-top]');
     if (!button) return;
-    const show = window.scrollY > 300;
+    const show = window.scrollY > 400;
     button.classList.toggle('opacity-0', !show);
     button.classList.toggle('pointer-events-none', !show);
     button.classList.toggle('opacity-100', show);
-    button.classList.toggle('pointer-events-auto', show);
   }
 
   document.addEventListener('click', (event) => {
-    const button = event.target.closest('[data-back-to-top]');
-    if (button) {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
+    const button = (event.target as HTMLElement).closest('[data-back-to-top]');
+    if (button) window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 
   document.addEventListener('astro:page-load', () => {
-    if (window._bttScrollReady) return;
-    window._bttScrollReady = true;
-    window.addEventListener('scroll', updateButton, { passive: true });
+    const w = window as unknown as { _bttReady?: boolean };
+    if (!w._bttReady) {
+      w._bttReady = true;
+      window.addEventListener('scroll', updateButton, { passive: true });
+    }
     updateButton();
   });
 </script>

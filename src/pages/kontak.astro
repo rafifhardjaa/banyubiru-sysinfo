@@ -1,206 +1,146 @@
 ---
 import Layout from '../layouts/Layout.astro';
-
+import { photos } from '../lib/photos';
 const mapEmbedUrl =
   'https://maps.google.com/maps?q=Kebondowo%2C%20Kec.%20Banyubiru%2C%20Kabupaten%20Semarang%2C%20Jawa%20Tengah&z=14&output=embed';
 ---
 
 <Layout
-  title="Kontak & Layanan | Pengmas FTI Desa Kebondowo"
-  description="Hubungi Kantor Pelayanan dan tim pengabdian masyarakat FTI di Desa Kebondowo. Sampaikan aspirasi, daftarkan UMKM, atau tanyakan jadwal Expo Gelar Karya."
-  type="website"
+  title="Kontak & layanan | Banyubiru"
+  description="Hubungi posko pengabdian FTI di Desa Kebondowo: alamat, jam layanan, formulir aspirasi, dan peta lokasi."
 >
-  <section class="bg-slate-50 py-20 lg:py-28">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <div class="max-w-2xl">
-        <span class="inline-flex items-center gap-2 rounded-full border border-brand-100 bg-brand-50 px-3.5 py-1.5 text-xs font-bold uppercase tracking-widest text-brand-700">
-          <span class="h-1.5 w-1.5 rounded-full bg-brand-500"></span>
-          Kontak &amp; Layanan
-        </span>
-        <h1 class="mt-6 text-3xl font-extrabold tracking-tight text-slate-900 md:text-4xl lg:text-5xl">
-          Kami Siap Mendengar Aspirasi Anda
-        </h1>
-        <p class="mt-5 text-base leading-relaxed text-slate-600 md:text-lg">
-          Kantor pelayanan terbuka bagi warga Desa Kebondowo, pelaku UMKM, dan
-          siapa pun yang ingin terlibat dalam pengabdian masyarakat di Desa
-          Kebondowo, Kecamatan Banyubiru.
+  <section class="wrap pt-0 sm:pt-0 min-h-[700px] flex flex-col items-center justify-center">
+    <h1 class="mt-4 max-w-[18ch] font-display text-[clamp(3rem,6.5vw,5rem)] font-semibold leading-[1] tracking-tightest">
+      Posko pengabdian terbuka untuk warga.
+    </h1>
+    <p class="lede mt-6">
+      Sampaikan aspirasi, daftarkan usaha, atau tanyakan jadwal kegiatan. Tim
+      akan membalas pada hari kerja.
+    </p>
+  </section>
+
+  <section class="wrap mt-section-s grid gap-12 lg:grid-cols-12 lg:gap-14">
+    <div class="lg:col-span-7">
+      <form
+        action="https://formspree.io/f/mjyvvbwa"
+        method="post"
+        class="border border-ink/30 bg-paper-light p-6 sm:p-8"
+      >
+        <h2 class="font-display text-[var(--text-section)] font-semibold tracking-tight">
+          Formulir pesan & aspirasi
+        </h2>
+        <p class="mt-2 text-sm leading-relaxed text-ink-soft">
+          Formulir dikirim melalui Formspree. Kolom bertanda wajib harus diisi.
         </p>
-      </div>
 
-      <div class="mt-14 grid grid-cols-1 gap-8 lg:grid-cols-2">
-        <div class="space-y-6">
-          <div class="rounded-[2rem] border border-slate-100 bg-white p-8 shadow-sm">
-            <h2 class="flex items-center gap-3 text-lg font-bold tracking-tight text-slate-900">
-              <span class="flex h-10 w-10 items-center justify-center rounded-xl bg-brand-50 text-brand-700">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5" aria-hidden="true">
-                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z"></path>
-                  <circle cx="12" cy="10" r="3"></circle>
-                </svg>
-              </span>
-              Alamat Kantor
-            </h2>
-            <p class="mt-4 text-sm leading-relaxed text-slate-600">
-               Balai Desa Kebondowo / Posko Pengmas FTI, Jl. Raya Kebondowo - Banyubiru, Kec. Banyubiru, Kab. Semarang, Jawa Tengah.
-             </p>
-          </div>
-
-          <div class="rounded-[2rem] border border-slate-100 bg-white p-8 shadow-sm">
-            <h2 class="flex items-center gap-3 text-lg font-bold tracking-tight text-slate-900">
-              <span class="flex h-10 w-10 items-center justify-center rounded-xl bg-brand-50 text-brand-700">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5" aria-hidden="true">
-                  <path d="M4 4h16v16H4z"></path>
-                  <polyline points="22,6 12,13 2,6"></polyline>
-                </svg>
-              </span>
-              Email &amp; Hotline
-            </h2>
-            <ul class="mt-4 space-y-3 text-sm font-semibold text-slate-600">
-              <li class="flex items-center gap-2">
-                <span class="text-brand-700">✉</span>
-                <a href="mailto:pengmas.fti@gmail.com" class="transition-colors hover:text-brand-700">
-                  pengmas.fti@gmail.com
-                </a>
-              </li>
-              <li class="flex items-center gap-2">
-                <span class="text-brand-700">✆</span>
-                <a
-                  href="https://wa.me/6281234567899"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="transition-colors hover:text-brand-700"
-                >
-                  WhatsApp Layanan Warga: +62 812-3456-7899
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          <div class="rounded-[2rem] border border-slate-100 bg-white p-8 shadow-sm">
-            <h2 class="flex items-center gap-3 text-lg font-bold tracking-tight text-slate-900">
-              <span class="flex h-10 w-10 items-center justify-center rounded-xl bg-brand-50 text-brand-700">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5" aria-hidden="true">
-                  <circle cx="12" cy="12" r="10"></circle>
-                  <polyline points="12 6 12 12 16 14"></polyline>
-                </svg>
-              </span>
-              Jam Operasional
-            </h2>
-            <p class="mt-4 text-sm leading-relaxed text-slate-600">
-              Senin - Jumat, 08.00 - 15.30 WIB
-            </p>
-            <p class="mt-1 text-xs font-semibold text-slate-400">
-              Tutup pada hari libur nasional &amp; akhir pekan.
-            </p>
-          </div>
-
-          <form action="https://formspree.io/f/mjyvvbwa" method="post" class="rounded-[2rem] border border-slate-100 bg-white p-8 shadow-sm">
-            <h2 class="text-lg font-bold tracking-tight text-slate-900">
-              Form Pesan &amp; Aspirasi
-            </h2>
-            <p class="mt-2 text-sm leading-relaxed text-slate-500">
-              Sampaikan aspirasi atau pertanyaan Anda, tim kami akan segera
-              menghubungi kembali.
-            </p>
-
-            <div class="mt-6 space-y-5">
-              <div class="grid grid-cols-1 gap-5 sm:grid-cols-2">
-                <label class="block">
-                  <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Nama</span>
-                  <input
-                    type="text"
-                    name="nama"
-                    required
-                    placeholder="Nama lengkap Anda"
-                    class="mt-2 w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-700 placeholder:text-slate-400 focus:border-brand-500 focus:bg-white focus:outline-none focus:ring-2 focus:ring-brand-100"
-                  />
-                </label>
-                <label class="block">
-                  <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Email / No. HP</span>
-                  <input
-                    type="text"
-                    name="kontak"
-                    required
-                    placeholder="Email atau nomor WhatsApp"
-                    class="mt-2 w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-700 placeholder:text-slate-400 focus:border-brand-500 focus:bg-white focus:outline-none focus:ring-2 focus:ring-brand-100"
-                  />
-                </label>
-              </div>
-              <label class="block">
-                <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Subjek</span>
-                <select
-                  name="subjek"
-                  class="mt-2 w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-700 focus:border-brand-500 focus:bg-white focus:outline-none focus:ring-2 focus:ring-brand-100"
-                >
-                  <option>Informasi Program Pengabdian</option>
-                  <option>Pendaftaran UMKM / Direktori Desa</option>
-                  <option>Aspirasi &amp; Layanan Lainnya</option>
-                </select>
+        <div class="mt-6 space-y-5">
+          <div class="grid gap-5 sm:grid-cols-2">
+            <div>
+              <label for="nama" class="block text-sm font-semibold text-ink">
+                Nama <span class="text-ink">*</span>
               </label>
-              <label class="block">
-                <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Pesan</span>
-                <textarea
-                  name="pesan"
-                  rows="4"
-                  required
-                  placeholder="Tuliskan pesan atau aspirasi Anda di sini..."
-                  class="mt-2 w-full resize-none rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-700 placeholder:text-slate-400 focus:border-brand-500 focus:bg-white focus:outline-none focus:ring-2 focus:ring-brand-100"
-                ></textarea>
-              </label>
-              <button
-                type="submit"
-                class="inline-flex w-full items-center justify-center gap-2 rounded-full bg-brand-700 px-8 py-4 font-bold text-white shadow-sm transition-all hover:-translate-y-0.5 hover:bg-brand-800 hover:shadow-lg"
-              >
-                Kirim Aspirasi
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5" aria-hidden="true">
-                  <line x1="22" y1="2" x2="11" y2="13"></line>
-                  <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
-                </svg>
-              </button>
+              <input
+                id="nama"
+                name="nama"
+                type="text"
+                required
+                autocomplete="name"
+                placeholder="Nama lengkap"
+                class="mt-1.5 w-full border border-ink bg-paper px-3.5 py-3 text-base text-ink placeholder:text-ink-mute/70 focus:border-danau focus:outline-none focus:ring-2 focus:ring-danau/20"
+              />
             </div>
-          </form>
-        </div>
-
-        <div class="space-y-6">
-          <div class="overflow-hidden rounded-[2rem] border border-slate-100 bg-white shadow-sm">
-            <iframe
-              src={mapEmbedUrl}
-              title="Peta Lokasi Banyubiru"
-              class="h-[420px] w-full border-0 lg:h-[480px]"
-              loading="eager"
-              referrerpolicy="no-referrer-when-downgrade"
-              allowfullscreen
-            ></iframe>
+            <div>
+              <label for="kontak" class="block text-sm font-semibold text-ink">
+                Email atau WhatsApp <span class="text-ink">*</span>
+              </label>
+              <input
+                id="kontak"
+                name="kontak"
+                type="text"
+                required
+                autocomplete="email"
+                placeholder="email@contoh.com atau 08xx"
+                class="mt-1.5 w-full border border-ink bg-paper px-3.5 py-3 text-base text-ink placeholder:text-ink-mute/70 focus:border-danau focus:outline-none focus:ring-2 focus:ring-danau/20"
+              />
+            </div>
           </div>
 
-          <div class="rounded-[2rem] bg-slate-900 p-8 text-white">
-            <h2 class="flex items-center gap-3 text-lg font-bold tracking-tight">
-              <span class="flex h-10 w-10 items-center justify-center rounded-xl bg-white/10 text-brand-400">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5" aria-hidden="true">
-                  <circle cx="12" cy="12" r="10"></circle>
-                  <line x1="2" y1="12" x2="22" y2="12"></line>
-                  <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
-                </svg>
-              </span>
-              Info Akses &amp; Rute
-            </h2>
-            <ul class="mt-5 space-y-4 text-sm font-semibold text-slate-300">
-              <li class="flex items-start gap-3">
-                <span class="text-brand-400">•</span>
-                22 km dari Ibu Kota Kabupaten Semarang (Ungaran).
-              </li>
-              <li class="flex items-start gap-3">
-                <span class="text-brand-400">•</span>
-                Hanya 4 km dari pusat kota Ambarawa.
-              </li>
-              <li class="flex items-start gap-3">
-                <span class="text-brand-400">•</span>
-                Terjangkau via transportasi umum trayek Semarang - Ambarawa.
-              </li>
-            </ul>
+          <div>
+            <label for="subjek" class="block text-sm font-semibold text-ink">
+              Subjek
+            </label>
+            <select
+              id="subjek"
+              name="subjek"
+              class="mt-1.5 w-full border border-ink bg-paper px-3.5 py-3 text-base text-ink focus:border-danau focus:outline-none focus:ring-2 focus:ring-danau/20"
+            >
+              <option>Informasi program pengabdian</option>
+              <option>Pendaftaran UMKM</option>
+              <option>Kerja sama atau kunjungan</option>
+            </select>
           </div>
+
+          <div>
+            <label for="pesan" class="block text-sm font-semibold text-ink">
+              Pesan <span class="text-ink">*</span>
+            </label>
+            <textarea
+              id="pesan"
+              name="pesan"
+              rows="3"
+              required
+              placeholder="Isi pesan atau aspirasi Anda"
+              class="mt-1.5 w-full border border-ink bg-paper px-3.5 py-3 text-base text-ink placeholder:text-ink-mute/70 focus:border-danau focus:outline-none focus:ring-2 focus:ring-danau/20"
+></textarea>
+          </div>
+
+          <button
+            type="submit"
+            class="mt-6 w-full rounded-full bg-accent px-8 py-3 font-bold text-ink shadow-sm transition-all hover:bg-accent/90"
+          >
+            Kirim Aspirasi
+          </button>
         </div>
+      </form>
+    </div>
+
+    <div class="lg:col-span-5">
+      <p class="label mt-8">Kontak & layanan</p>
+      <div class="mt-8 rounded-[2rem] border border-ink bg-paper-deep p-8 text-ink">
+        <h2 class="flex items-center gap-3 text-[var(--text-section)] font-bold tracking-tight">
+          <span class="flex h-10 w-10 items-center justify-center rounded-xl bg-paper/10 text-ink/60">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="h-5 w-5"
+              aria-hidden="true"
+            >
+              <circle cx="12" cy="12" r="10"></circle>
+              <polyline points="12 6 12 12 16 14"></polyline>
+            </svg>
+          </span>
+          Info Akses & Rute
+        </h2>
+        <ul class="mt-5 space-y-4 text-sm text-ink-mute">
+          <li class="flex items-start gap-3">
+            <span class="text-ink">•</span>
+            22 km dari Ibu Kota Kabupaten Semarang (Ungaran).
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-ink">•</span>
+            Hanya 4 km dari pusat kota Ambarawa.
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-ink">•</span>
+            Terjangkau via transportasi umum trayek Semarang - Ambarawa.
+          </li>
+        </ul>
       </div>
     </div>
   </section>
-
 </Layout>

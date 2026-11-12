@@ -1,9 +1,8 @@
 ---
 import '../styles/global.css';
 import { ClientRouter } from 'astro:transitions';
-import SpeedInsights from "@vercel/speed-insights/astro"
+import SpeedInsights from '@vercel/speed-insights/astro';
 import Navbar from '../components/Navbar.astro';
-
 import Footer from '../components/Footer.astro';
 import BackToTop from '../components/BackToTop.astro';
 
@@ -15,9 +14,9 @@ interface Props {
 }
 
 const {
-  title = 'FTI Banyubiru • Desa Kebondowo | Portal Pengabdian Masyarakat',
+  title = 'Banyubiru · Jurnal Pengabdian FTI',
   description =
-    'Portal sistem informasi terpadu dan rekam jejak digital sinergi kolaborasi 6 program studi FTI di Desa Kebondowo, Kecamatan Banyubiru, Kabupaten Semarang.',
+    'Catatan lapangan pengabdian masyarakat Fakultas Teknologi Informasi di Desa Kebondowo, Kecamatan Banyubiru, Kabupaten Semarang.',
   image = '/og-default.jpg',
   type = 'website',
 } = Astro.props;
@@ -27,33 +26,31 @@ const ogImageURL = new URL(image, Astro.site);
 ---
 
 <!doctype html>
-<html
-  lang="id"
-  class="scroll-smooth antialiased selection:bg-brand-500 selection:text-white"
->
+<html lang="id" class="selection:bg-accent selection:text-ink">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="generator" content={Astro.generator} />
+    <meta name="color-scheme" content="light" />
     <ClientRouter />
 
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonicalURL} />
     <meta name="robots" content="index, follow" />
-    <meta name="theme-color" content="#1d4ed8" />
+    <meta name="theme-color" content="#f6f1e7" />
 
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@400;500;600;700&family=Red+Hat+Mono:wght@400;500&family=Red+Hat+Text:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
 
     <meta property="og:type" content={type} />
-    <meta property="og:site_name" content="Portal Pengmas FTI Banyubiru" />
+    <meta property="og:site_name" content="Banyubiru · Jurnal Pengabdian FTI" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonicalURL} />
@@ -69,64 +66,22 @@ const ogImageURL = new URL(image, Astro.site);
 
     <meta name="format-detection" content="telephone=no" />
   </head>
-  <body class="bg-slate-50 font-sans text-slate-600 antialiased">
+  <body class="min-h-screen bg-paper text-ink">
+    <a
+      href="#konten"
+      class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:bg-ink focus:px-4 focus:py-3 focus:text-sm focus:font-semibold focus:text-paper"
+    >
+      Lewati ke isi halaman
+    </a>
+
     <Navbar />
-    <main>
+
+    <main id="konten" tabindex="-1" class="focus:outline-none">
       <slot />
     </main>
+
     <BackToTop />
-    
     <Footer />
     <SpeedInsights />
   </body>
 </html>
-
-<style is:global>
-  .reveal-on-scroll {
-    opacity: 0;
-    transform: translateY(2rem);
-    transition:
-      opacity 0.7s ease-out,
-      transform 0.7s ease-out;
-  }
-
-  .reveal-on-scroll.is-visible {
-    opacity: 1;
-    transform: none;
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    .reveal-on-scroll {
-      opacity: 1;
-      transform: none;
-      transition: none;
-    }
-  }
-</style>
-
-<script>
-  let revealObserver = null;
-
-  function initReveal() {
-    const elements = document.querySelectorAll('.reveal-on-scroll:not(.is-visible)');
-    if (elements.length === 0) return;
-
-    if (revealObserver) revealObserver.disconnect();
-
-    revealObserver = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('is-visible');
-            revealObserver.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.1, rootMargin: '0px 0px -40px 0px' },
-    );
-
-    elements.forEach((el) => revealObserver.observe(el));
-  }
-
-  document.addEventListener('astro:page-load', initReveal);
-</script>

@@ -1,97 +1,26 @@
 ---
-import { Image } from 'astro:assets';
-import heroMain from '../assets/hero/banyubiru-hero.svg';
-import heroFloating from '../assets/hero/potensi.svg';
-
-const prodi = [
-  'Teknik Mesin',
-  'Teknik Sipil',
-  'Teknik Elektro',
-  'Teknik Arsitektur',
-  'Teknologi Pangan',
-  'Teknik Informatika',
-];
+import SurveyMap from './SurveyMap.astro';
 ---
 
-<section class="relative overflow-hidden bg-slate-50">
-  <div class="pointer-events-none absolute -right-24 -top-24 h-96 w-96 rounded-full bg-brand-50 blur-3xl"></div>
-  <div class="pointer-events-none absolute bottom-0 left-1/4 h-72 w-72 rounded-full bg-brand-100/60 blur-3xl"></div>
-
-  <div
-    class="relative mx-auto grid max-w-7xl grid-cols-1 items-center gap-16 px-4 pb-24 pt-16 sm:px-6 lg:grid-cols-2 lg:px-8 lg:pb-32 lg:pt-24"
-  >
-    <div class="relative z-10 reveal-on-scroll flex flex-col items-start text-left">
-      <span class="inline-flex items-center gap-2 rounded-full border border-brand-100 bg-brand-50 px-3.5 py-1.5 text-xs font-bold uppercase tracking-widest text-brand-700">
-        <span class="h-1.5 w-1.5 rounded-full bg-brand-500"></span>
-        Jejak Langkah FTI
-      </span>
-
-      <h1 class="mt-6 text-4xl font-extrabold leading-tight tracking-tight text-slate-900 md:text-5xl lg:text-6xl">
-        Merajut Harmoni, <span class="text-brand-700">Menyalakan Asa</span> di
-        Banyubiru
+<section class="wrap pt-6 sm:pt-8">
+  <div class="grid gap-x-10 gap-y-10 border-t border-ink/30 pt-8 lg:grid-cols-12 lg:items-center">
+    <div class="lg:col-span-5">
+      <h1 class="max-w-[13ch] text-[clamp(2.4rem,4.4vw,4.25rem)] font-semibold leading-[1.03] tracking-tightest">
+        Enam prodi. Satu desa.
       </h1>
 
-      <p class="mt-6 max-w-xl text-base leading-relaxed text-slate-600 md:text-lg">
-        Dari Desa Kebondowo di lereng Rawa Pening, Kecamatan Banyubiru, enam
-        program studi FTI bergerak bersama warga — membangun jalan, menyalakan
-        energi, mengolah pangan, dan menghadirkan teknologi yang menyentuh
-        kehidupan.
+      <p class="lede mt-5 max-w-[40ch]">
+        Jejak FTI di Kebondowo: jalan, surya, pangan, digital.
       </p>
 
-      <div class="flex flex-wrap items-center justify-start gap-4 mt-8 w-full">
-        <a
-          href="/proker"
-          class="px-6 py-3 rounded-full bg-blue-600 hover:bg-blue-700 text-white font-semibold shadow-lg shadow-blue-500/25 transition-all flex items-center justify-center gap-2"
-        >
-          Jelajahi Program Kerja
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 md:h-5 md:w-5" aria-hidden="true">
-            <line x1="5" y1="12" x2="19" y2="12"></line>
-            <polyline points="12 5 19 12 12 19"></polyline>
-          </svg>
-        </a>
-        <a
-          href="/berita"
-          class="px-6 py-3 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-800 font-semibold border border-slate-200 transition-all flex items-center justify-center"
-        >
-          Kabar Pengabdian
-        </a>
-      </div>
-
-      <div class="mt-8 flex flex-wrap items-center justify-start gap-2 max-w-lg">
-        {prodi.map((nama) => (
-          <span
-            class="px-3 py-1.5 rounded-full text-xs font-medium bg-slate-100 text-slate-700 border border-slate-200/80 hover:bg-blue-50 hover:text-blue-700 transition-colors"
-          >
-            {nama}
-          </span>
-        ))}
+      <div class="mt-7 flex flex-wrap gap-3">
+        <a href="/berita" class="btn-solid">Baca catatan</a>
+        <a href="/proker" class="btn-line">Lihat proker</a>
       </div>
     </div>
 
-    <div class="relative px-2 pb-10 pt-2 reveal-on-scroll lg:pb-0">
-      <Image
-        src={heroMain}
-        alt="Lanskap alam Desa Kebondowo • Rawa Pening, Banyubiru"
-        width={800}
-        height={1000}
-        class="h-full w-full rounded-[2.5rem] object-cover shadow-2xl ring-1 ring-slate-100"
-        loading="eager"
-        fetchpriority="high"
-        decoding="async"
-      />
-      <Image
-        src={heroFloating}
-        alt="Potensi olahan dan komoditas lokal Desa Kebondowo • Rawa Pening, Banyubiru"
-        width={500}
-        height={500}
-        class="absolute -bottom-6 -left-6 w-40 -rotate-6 rounded-3xl object-cover shadow-xl ring-4 ring-white sm:-left-10 sm:w-52"
-        loading="eager"
-        decoding="async"
-      />
-      <div class="absolute -top-6 right-6 rounded-2xl bg-white/90 px-5 py-4 shadow-lg backdrop-blur-md ring-1 ring-slate-100">
-        <p class="text-2xl font-extrabold text-brand-700">6 Prodi</p>
-        <p class="text-xs font-semibold text-slate-500">Desa Kebondowo • Rawa Pening, Banyubiru</p>
-      </div>
+    <div class="lg:col-span-7">
+      <SurveyMap class="lg:-mr-2" />
     </div>
   </div>
 </section>

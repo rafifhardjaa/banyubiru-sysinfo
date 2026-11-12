@@ -1,20 +1,25 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import AboutHero from '../components/AboutHero.astro';
-import BentoStory from '../components/BentoStory.astro';
-import ThreePillars from '../components/ThreePillars.astro';
+import AboutIntro from '../components/AboutIntro.astro';
+import Story from '../components/Story.astro';
+import Pillars from '../components/Pillars.astro';
 import TeamGrid from '../components/TeamGrid.astro';
-import CTA from '../components/CTA.astro';
+import EndNote from '../components/EndNote.astro';
 ---
 
 <Layout
-  title="Tentang Kami | Pengmas FTI Desa Kebondowo"
-  description="Mengenal Desa Kebondowo di Kecamatan Banyubiru sebagai lokus pengabdian FTI dengan potensi pertanian, perikanan Rawa Pening, dan UMKM lokal."
-  type="website"
+  title="Tentang pengabdian | Banyubiru"
+  description="Enam program studi FTI bekerja di Desa Kebondowo, Kecamatan Banyubiru: jalan, energi surya, olahan pangan, dan digitalisasi usaha warga."
 >
-  <AboutHero />
-  <BentoStory />
-  <ThreePillars />
+  <AboutIntro />
+  <Story />
+  <Pillars />
   <TeamGrid />
-  <CTA />
+  <EndNote
+    date="Catatan lapangan"
+    title="Baca apa yang dikerjakan, bukan hanya niatnya."
+    body="Setiap program kerja punya lokasi, penanggung jawab, dan daftar luaran. Semuanya bisa diperiksa satu per satu."
+    href="/proker"
+    linkLabel="Lihat program kerja"
+  />
 </Layout>

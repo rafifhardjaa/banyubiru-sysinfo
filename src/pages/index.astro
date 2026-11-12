@@ -1,20 +1,31 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Hero.astro';
-import NewsGrid from '../components/NewsGrid.astro';
-import Timeline from '../components/Timeline.astro';
-import ProkerGrid from '../components/ProkerGrid.astro';
-import Stats from '../components/Stats.astro';
-import Testimonials from '../components/Testimonials.astro';
-import CTA from '../components/CTA.astro';
+import Stories from '../components/Stories.astro';
+import Facts from '../components/Facts.astro';
+import Journey from '../components/Journey.astro';
+import ProkerIndex from '../components/ProkerIndex.astro';
+import PullQuote from '../components/PullQuote.astro';
+import PhotoStrip from '../components/PhotoStrip.astro';
+import EndNote from '../components/EndNote.astro';
 ---
 
 <Layout>
   <Hero />
-  <NewsGrid />
-  <Timeline />
-  <ProkerGrid />
-  <Stats />
-  <Testimonials />
-  <CTA />
+  <Stories />
+  <Facts />
+  <Journey />
+  <ProkerIndex />
+  <PullQuote
+    quote="Ilmu tidaklah bermakna jika tak pernah menapaki tanah desa. Di Banyubiru kami belajar sambil membangun, mengabdi sambil mencipta."
+    attribution="Divisi Pengabdian Masyarakat FTI"
+  />
+  <PhotoStrip />
+  <EndNote
+    date="Gelar karya · 25 Agustus 2026"
+    title="Pameran selesai. Dokumentasinya ada di galeri."
+    body="Foto, luaran program, dan catatan ada di galeri. Untuk kerja sama, hubungi posko."
+    href="/galeri"
+    linkLabel="Buka galeri"
+  />
 </Layout>
