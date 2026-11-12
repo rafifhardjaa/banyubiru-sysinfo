@@ -1,0 +1,55 @@
+---
+import { Picture } from 'astro:assets';
+
+interface Props {
+  src: ImageMetadata;
+  alt: string;
+  caption?: string;
+  width?: number;
+  height?: number;
+  /** Tailwind aspect ratio class, misal "aspect-[3/2]". */
+  ratio?: string;
+  sizes?: string;
+  priority?: boolean;
+  class?: string;
+}
+
+const {
+  src,
+  alt,
+  caption,
+  width = 1200,
+  height = 800,
+  ratio = 'aspect-[3/2]',
+  sizes = '(min-width: 1180px) 1180px, 100vw',
+  priority = false,
+  class: className = '',
+} = Astro.props;
+---
+
+<figure class={className}>
+  <div class:list={['overflow-hidden bg-paper-deep', ratio]}>
+    <Picture
+      src={src}
+      alt={alt}
+      width={width}
+      height={height}
+      widths={[480, 800, 1200, 1600]}
+      sizes={sizes}
+      formats={['avif', 'webp']}
+      fallbackFormat="webp"
+      pictureAttributes={{ class: 'block h-full w-full' }}
+      class="h-full w-full object-cover"
+      loading={priority ? 'eager' : 'lazy'}
+      fetchpriority={priority ? 'high' : undefined}
+      decoding="async"
+    />
+  </div>
+  {
+    caption && (
+      <figcaption class="mt-2.5 text-xs leading-relaxed text-ink-mute">
+        {caption}
+      </figcaption>
+    )
+  }
+</figure>
