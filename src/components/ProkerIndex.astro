@@ -1,0 +1,64 @@
+---
+import { getCollection } from 'astro:content';
+import SectionHead from './SectionHead.astro';
+
+const proker = (await getCollection('proker'))
+  .sort((a, b) => a.data.order - b.data.order)
+  .slice(0, 6);
+---
+
+<section class="wrap mt-section-s">
+  <SectionHead
+    label="Program kerja"
+    title="Enam prodi, enam pekerjaan yang bisa ditelusuri"
+    intro="Nomor sama dengan pin di peta. Detail lokasi dan luaran di tiap baris.",
+    href="/proker"
+    linkLabel="Katalog lengkap"
+  />
+
+  <ul class="mt-9 border-t border-ink/30">
+    {
+      proker.map((item, index) => {
+        const done = item.data.progressPercent >= 100;
+        return (
+          <li class="border-b border-line">
+            <a
+              href={`/proker/${item.id}`}
+              class="group grid gap-x-4 gap-y-2 py-5 transition-colors hover:bg-paper-light sm:grid-cols-[3.5rem_minmax(0,1fr)_auto] sm:items-center sm:gap-x-6 sm:py-6"
+            >
+              <span class="num text-sm text-ink-mute transition-colors group-hover:text-ink">
+                {String(index + 1).padStart(2, '0')}
+              </span>
+
+              <span class="min-w-0">
+                <span class="block text-xs font-medium text-ink-mute">{item.data.prodi}</span>
+                <span class="mt-1 block font-display text-xl font-semibold leading-snug tracking-tight text-ink sm:text-2xl">
+                  {item.data.title}
+                </span>
+              </span>
+
+              <span class="flex items-center gap-3 sm:justify-end">
+                <span class:list={['chip', done ? 'chip--in' : 'chip--out']}>
+                  {done ? 'Selesai' : item.data.status}
+                </span>
+                <span class="num hidden text-xs text-ink-mute sm:block">
+                  {item.data.progressPercent}%
+                </span>
+                <svg
+                  class="hidden h-4 w-4 shrink-0 text-ink opacity-0 transition-all duration-base ease-editorial group-hover:translate-x-0.5 group-hover:opacity-100 sm:block"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.75"
+                  aria-hidden="true"
+                >
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6" />
+                </svg>
+              </span>
+            </a>
+          </li>
+        );
+      })
+    }
+  </ul>
+</section>

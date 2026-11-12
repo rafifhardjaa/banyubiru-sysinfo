@@ -1,0 +1,58 @@
+---
+import Figure from './Figure.astro';
+import { photos } from '../lib/photos';
+---
+
+<section class="wrap mt-section-s">
+  <div class="grid gap-10 lg:grid-cols-12 lg:gap-12">
+    <div class="lg:col-span-7">
+      <div class="max-w-measure space-y-16 text-base leading-[1.75] text-ink-soft sm:text-lg">
+        <p class="font-display text-2xl leading-snug text-ink sm:text-3xl">
+          Desa Kebondowo berada di lereng Rawa Pening, Kecamatan Banyubiru.
+          Pertanian, perikanan rawa, dan usaha rumahan menjadi tulang
+          punggung ekonominya.
+        </p>
+        <p>
+          Selama dua pekan, mahasiswa dari enam program studi tinggal dan
+          bekerja bersama warga. Mereka tidak datang dengan program yang sudah
+          jadi. Kebutuhan dipetakan lebih dulu, lalu diterjemahkan menjadi
+          pekerjaan yang bisa diselesaikan bersama.
+        </p>
+        <p>
+          Ada jalan desa yang dicor, panel surya yang dipasang, dapur warga yang
+          ditata ulang, dan usaha kecil yang mulai punya katalog digital. Semua
+          dikerjakan dengan alat dan bahan yang tersedia di desa, agar bisa
+          dirawat sendiri setelah program selesai.
+        </p>
+      </div>
+    </div>
+
+    <div class="lg:col-span-5">
+      <Figure
+        src={photos.sawah}
+        alt="Ilustrasi terasering sawah dengan petak hijau"
+        ratio="aspect-[4/5]"
+        sizes="(min-width: 1024px) 40vw, 100vw"
+        caption="Foto ilustrasi: lanskap pertanian di dataran tinggi."
+      />
+      <dl class="mt-8 border-t border-ink/30">
+        <div class="flex items-baseline justify-between gap-4 border-b border-line py-4">
+          <dt class="text-sm text-ink-mute">Lokus</dt>
+          <dd class="text-sm font-semibold text-ink">Desa Kebondowo</dd>
+        </div>
+        <div class="flex items-baseline justify-between gap-4 border-b border-line py-4">
+          <dt class="text-sm text-ink-mute">Kecamatan</dt>
+          <dd class="text-sm font-semibold text-ink">Banyubiru</dd>
+        </div>
+        <div class="flex items-baseline justify-between gap-4 border-b border-line py-4">
+          <dt class="text-sm text-ink-mute">Program studi</dt>
+          <dd class="text-sm font-semibold text-ink">Enam</dd>
+        </div>
+        <div class="flex items-baseline justify-between gap-4 border-b border-line py-4">
+          <dt class="text-sm text-ink-mute">Pelaksana</dt>
+          <dd class="text-sm font-semibold text-ink">BEM &amp; himpunan FTI</dd>
+        </div>
+      </dl>
+    </div>
+  </div>
+</section>

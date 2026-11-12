@@ -1,0 +1,47 @@
+---
+interface Props {
+  label: string;
+  title: string;
+  intro?: string;
+  href?: string;
+  linkLabel?: string;
+}
+
+const { label, title, intro, href, linkLabel = 'Lihat semua' } = Astro.props;
+---
+
+<div class="border-t border-ink/30 pt-5 sm:pt-6">
+  <div class="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between sm:gap-12">
+    <div class="max-w-measure">
+      <p class="label flex items-center gap-2.5">
+        <span class="h-px w-6 shrink-0 bg-accent" aria-hidden="true" />
+        {label}
+      </p>
+      <h2 class="mt-3 font-display font-semibold leading-[1.05] tracking-display text-[var(--text-section)] max-w-[30ch]">{title}</h2>
+      {
+        intro && (
+          <p class="mt-3.5 max-w-[56ch] text-base leading-relaxed text-ink-soft">
+            {intro}
+          </p>
+        )
+      }
+    </div>
+    {
+      href && (
+        <a href={href} class="link-more group shrink-0 sm:pb-1">
+          {linkLabel}
+          <svg
+            class="h-3.5 w-3.5 transition-transform duration-base ease-editorial group-hover:translate-x-0.5"
+            viewBox="0 0 16 16"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.5"
+            aria-hidden="true"
+          >
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3 8h10M9 4l4 4-4 4" />
+          </svg>
+        </a>
+      )
+    }
+  </div>
+</div>

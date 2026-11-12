@@ -1,0 +1,36 @@
+---
+const facts = [
+  { value: '6', unit: 'prodi', label: 'Program studi', note: 'Mesin, Sipil, Elektro, Arsitektur, Pangan, Informatika' },
+  { value: '4', unit: 'tahap', label: 'Tahap pengabdian', note: 'Penerjunan, sosialisasi, eksekusi, gelar karya' },
+  { value: '14', unit: 'hari', label: 'Hari di lapangan', note: 'Kerja bersama warga Desa Kebondowo' },
+];
+---
+
+<section class="mt-section-s border-y border-ink/30 bg-paper-light">
+  <dl class="wrap grid sm:grid-cols-3">
+    {
+      facts.map((fact, index) => (
+        <div
+          class:list={[
+            'flex flex-col gap-4 py-8 sm:py-10',
+            index > 0 ? 'border-t border-line sm:border-l sm:border-t-0 sm:pl-8' : '',
+            index < facts.length - 1 ? 'sm:pr-8' : '',
+          ]}
+        >
+          <dt class="label">{fact.label}</dt>
+          <dd>
+            <span class="flex items-baseline gap-2">
+              <span class="font-display text-[clamp(2.75rem,6vw,4rem)] font-semibold leading-[0.85] tracking-tightest text-ink">
+                {fact.value}
+              </span>
+              <span class="num text-sm text-ink-2">{fact.unit}</span>
+            </span>
+            <span class="mt-3 block max-w-[32ch] text-pretty text-sm leading-relaxed text-ink-mute">
+              {fact.note}
+            </span>
+          </dd>
+        </div>
+      ))
+    }
+  </dl>
+</section>

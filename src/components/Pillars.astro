@@ -1,0 +1,39 @@
+---
+const pillars = [
+  {
+    number: '01',
+    title: 'Fondasi',
+    description:
+      'Prasarana dasar lebih dulu: akses jalan, penerangan, dan energi yang membuat aktivitas warga bisa berjalan.',
+  },
+  {
+    number: '02',
+    title: 'Ruang hidup',
+    description:
+      'Ruang desa ditata dan potensi lokal diolah: tata ruang wisata, dapur produksi, dan ruang kreatif warga.',
+  },
+  {
+    number: '03',
+    title: 'Ekosistem',
+    description:
+      'Manusia, usaha, dan teknologi disambungkan lewat digitalisasi dan kolaborasi lintas program studi.',
+  },
+];
+---
+
+<section class="wrap mt-section-s">
+  <p class="label">Tiga arah kerja</p>
+  <h2 class="mt-2 max-w-[22ch] text-[var(--text-section)] leading-[1.1]">Yang dikerjakan, dan mengapa</h2>
+
+  <ul class="mt-10 grid gap-8 border-t border-ink/30 pt-8 sm:grid-cols-3 sm:gap-10">
+    {pillars.map((pillar) => (
+      <li>
+        <p class="num text-lg text-accent">{pillar.number}</p>
+        <h3 class="mt-2 text-xl leading-snug sm:text-2xl">{pillar.title}</h3>
+        <p class="mt-3 text-base leading-relaxed text-ink-soft">
+          {pillar.description}
+        </p>
+      </li>
+    ))}
+  </ul>
+</section>

@@ -1,0 +1,31 @@
+---
+interface Props {
+  quote: string;
+  attribution: string;
+}
+
+const { quote, attribution } = Astro.props;
+---
+
+<section class="mt-section-s bg-ink text-paper">
+  <div class="wrap py-16 sm:py-20">
+    <figure class="grid max-w-4xl gap-5 sm:grid-cols-[auto_minmax(0,1fr)] sm:gap-x-8">
+      <span class="font-display text-6xl leading-[0.7] text-accent sm:text-7xl" aria-hidden="true">
+        “
+      </span>
+
+      <div>
+        <blockquote>
+          <p class="font-display text-[clamp(1.8rem,4.2vw,3.25rem)] font-medium leading-[1.14] tracking-tight text-paper">
+            {quote}
+          </p>
+        </blockquote>
+
+        <figcaption class="mt-8 flex items-center gap-4">
+          <span class="h-px w-10 shrink-0 bg-accent" aria-hidden="true" />
+          <cite class="text-sm not-italic text-paper/75">{attribution}</cite>
+        </figcaption>
+      </div>
+    </figure>
+  </div>
+</section>

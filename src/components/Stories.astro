@@ -1,0 +1,133 @@
+---
+import { getCollection } from 'astro:content';
+import Figure from './Figure.astro';
+import SectionHead from './SectionHead.astro';
+import { illustrationFor } from '../lib/illustration';
+
+const berita = (await getCollection('berita'))
+  .sort(
+    (a, b) =>
+      Number(b.data.featured) - Number(a.data.featured) ||
+      b.data.publishDate.valueOf() - a.data.publishDate.valueOf(),
+  )
+  .slice(0, 3);
+
+const [featured, ...rest] = berita;
+
+function formatDate(date: Date): string {
+  return new Intl.DateTimeFormat('id-ID', {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+  }).format(date);
+}
+---
+
+<section class="wrap mt-section-s">
+  <SectionHead
+    label="Catatan terbaru"
+    title="Apa yang terjadi di lapangan"
+    intro="Laporan pendek dari desa: yang selesai, yang berjalan."
+    href="/berita"
+    linkLabel="Semua catatan"
+  />
+
+  {
+    featured && (
+      <article class="notebook entry relative mt-9">
+        <span class="absolute inset-x-0 top-0 h-[3px] bg-accent" aria-hidden="true" />
+        <a
+          href={`/berita/${featured.id}`}
+          class="group grid focus-visible:outline-offset-[-4px] lg:grid-cols-12"
+        >
+          <div class="overflow-hidden border-b border-ink/15 lg:col-span-6 lg:border-b-0 lg:border-r">
+            <Figure
+              src={illustrationFor(featured.data.category)}
+              alt={`Ilustrasi untuk catatan: ${featured.data.title}`}
+              ratio="aspect-[16/10] lg:aspect-auto lg:h-full"
+              sizes="(min-width: 1024px) 50vw, 100vw"
+              class="h-full zoom-in"
+            />
+          </div>
+
+          <div class="flex flex-col justify-between gap-8 p-6 sm:p-8 lg:col-span-6 lg:p-10">
+            <div>
+              <p class="label flex items-center gap-2">
+                <span class="h-2 w-2 shrink-0 bg-accent" aria-hidden="true" />
+                Catatan unggulan
+              </p>
+
+              <p class="mt-4 flex flex-wrap items-baseline gap-x-3 gap-y-1 text-xs text-ink-mute">
+                <span class="font-medium text-green">{featured.data.category}</span>
+                <time datetime={featured.data.publishDate.toISOString()} class="num">
+                  {formatDate(featured.data.publishDate)}
+                </time>
+              </p>
+
+              <h3 class="mt-2 text-3xl leading-[1.05] sm:text-4xl">
+                {featured.data.title}
+              </h3>
+
+              <p class="mt-4 text-base leading-relaxed text-ink-soft">
+                {featured.data.summary}
+              </p>
+            </div>
+
+            <span class="link-more">
+              Baca catatan
+              <svg class="h-3.5 w-3.5" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3 8h10M9 4l4 4-4 4" />
+              </svg>
+            </span>
+          </div>
+        </a>
+      </article>
+    )
+  }
+
+  {
+    rest.length > 0 && (
+      <div class="mt-10">
+        <p class="label border-b border-ink/30 pb-2.5">Catatan lain</p>
+
+        <ul class="border-b border-line">
+          {rest.map((item, index) => (
+            <li class="border-b border-line last:border-b-0">
+              <a
+                href={`/berita/${item.id}`}
+                class="group grid gap-4 py-6 transition-colors hover:bg-paper-light sm:grid-cols-[2.5rem_minmax(0,1fr)_7rem] sm:items-start sm:gap-6"
+              >
+                <span class="num hidden pt-0.5 text-sm text-ink-mute sm:block">
+                  {String(index + 2).padStart(2, '0')}
+                </span>
+
+                <div>
+                  <p class="flex flex-wrap items-baseline gap-x-3 gap-y-1 text-xs text-ink-mute">
+                    <span class="font-medium text-green">{item.data.category}</span>
+                    <time datetime={item.data.publishDate.toISOString()} class="num">
+                      {formatDate(item.data.publishDate)}
+                    </time>
+                  </p>
+
+                  <h3 class="mt-1.5 text-xl leading-snug sm:text-2xl">
+                    {item.data.title}
+                  </h3>
+                </div>
+
+                <div class="hidden overflow-hidden sm:block">
+                  <Figure
+                    src={illustrationFor(item.data.category)}
+                    alt={`Ilustrasi untuk catatan: ${item.data.title}`}
+                    ratio="aspect-[4/3]"
+                    sizes="7rem"
+                    class="zoom-in"
+                  />
+                </div>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    )
+  }
+</section>
